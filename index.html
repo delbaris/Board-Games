@@ -1,0 +1,3127 @@
+<!doctype html>
+<html lang="fa" dir="rtl" data-theme="shab">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="رخ | هر حرکت، یک سایه می‌آفریند. دوئل استراتژیک نور و سایه — آفلاین، سریع، عمیق.">
+    <meta name="theme-color" content="#0f1219">
+    <title>رخ | ROKH — هر حرکت، یک سایه</title>
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3CradialGradient id='s' cx='35%25' cy='35%25'%3E%3Cstop offset='0%25' stop-color='%23ffe3a0'/%3E%3Cstop offset='60%25' stop-color='%23e8b34c'/%3E%3Cstop offset='100%25' stop-color='%2396691f'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='%230f1219'/%3E%3Ccircle cx='18' cy='18' r='9.5' fill='%23050709' opacity='.8'/%3E%3Ccircle cx='14' cy='14' r='9.5' fill='url(%23s)'/%3E%3Ccircle cx='11.5' cy='11.5' r='2.5' fill='%23fff' opacity='.3'/%3E%3C/svg%3E">
+    <link rel="apple-touch-icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3CradialGradient id='s' cx='35%25' cy='35%25'%3E%3Cstop offset='0%25' stop-color='%23ffe3a0'/%3E%3Cstop offset='60%25' stop-color='%23e8b34c'/%3E%3Cstop offset='100%25' stop-color='%2396691f'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='%230f1219'/%3E%3Ccircle cx='18' cy='18' r='9.5' fill='%23050709' opacity='.8'/%3E%3Ccircle cx='14' cy='14' r='9.5' fill='url(%23s)'/%3E%3Ccircle cx='11.5' cy='11.5' r='2.5' fill='%23fff' opacity='.3'/%3E%3C/svg%3E">
+    <meta name="apple-mobile-web-app-title" content="رخ | ROKH">
+    <meta name="application-name" content="رخ | ROKH">
+    <style>
+        /* ================= ریشه و تم‌ها ================= */
+        :root {
+            --r: 14px;
+            --rs: 10px;
+            --sp: .18s;
+            --font: "Vazirmatn", "IRANSansX", "Segoe UI", Tahoma, system-ui, sans-serif
+        }
+
+        [data-theme=shab] {
+            --bg0: #0f1219;
+            --bg1: #151a26;
+            --surface: #171d2a;
+            --surface2: #1f2738;
+            --line: #2c3550;
+            --line2: #3d4a70;
+            --ink: #ece7d8;
+            --mut: #9aa4ba;
+            --faint: #6b7590;
+            --p1: #e8b34c;
+            --p1-soft: rgba(232, 179, 76, .16);
+            --p1-glow: rgba(232, 179, 76, .5);
+            --p2: #54b8a6;
+            --p2-soft: rgba(84, 184, 166, .15);
+            --p2-glow: rgba(84, 184, 166, .45);
+            --bad: #e0604b;
+            --bad-soft: rgba(224, 96, 75, .18);
+            --good: #9ccf8a;
+            --gold: #ffd479;
+            --board: #121722;
+            --cell: #1a2130;
+            --cell-line: #2a3450;
+            --shink: #05070c;
+            --disc1: radial-gradient(circle at 32% 28%, #ffe3a0, #e8b34c 55%, #96691f);
+            --disc2: radial-gradient(circle at 32% 28%, #b9f0e3, #54b8a6 55%, #22615a);
+            --glowtop: rgba(232, 179, 76, .07);
+            --patop: .05
+        }
+
+        [data-theme=kaghaz] {
+            --bg0: #efe7d6;
+            --bg1: #f5efe1;
+            --surface: #f8f2e4;
+            --surface2: #fffaef;
+            --line: #d8ccb2;
+            --line2: #bfae8c;
+            --ink: #2f2a21;
+            --mut: #7c7260;
+            --faint: #a99e88;
+            --p1: #c65a2e;
+            --p1-soft: rgba(198, 90, 46, .13);
+            --p1-glow: rgba(198, 90, 46, .42);
+            --p2: #3b5b7e;
+            --p2-soft: rgba(59, 91, 126, .12);
+            --p2-glow: rgba(59, 91, 126, .36);
+            --bad: #b3372b;
+            --bad-soft: rgba(179, 55, 43, .14);
+            --good: #4f7f4f;
+            --gold: #a97b28;
+            --board: #e7dcc4;
+            --cell: #f6efdd;
+            --cell-line: #d2c5a6;
+            --shink: #b9ab8b;
+            --disc1: radial-gradient(circle at 32% 28%, #f2a877, #c65a2e 55%, #7c3218);
+            --disc2: radial-gradient(circle at 32% 28%, #a3c3e2, #3b5b7e 55%, #1e3346);
+            --glowtop: rgba(198, 90, 46, .08);
+            --patop: .07
+        }
+
+        [data-theme=firuze] {
+            --bg0: #0d2f36;
+            --bg1: #123a42;
+            --surface: #14424b;
+            --surface2: #1a4f59;
+            --line: #2b6672;
+            --line2: #3f8492;
+            --ink: #eef3ec;
+            --mut: #a3c2bd;
+            --faint: #6e938e;
+            --p1: #ff9163;
+            --p1-soft: rgba(255, 145, 99, .16);
+            --p1-glow: rgba(255, 145, 99, .5);
+            --p2: #f2e7cf;
+            --p2-soft: rgba(242, 231, 207, .15);
+            --p2-glow: rgba(242, 231, 207, .42);
+            --bad: #ff6b5e;
+            --bad-soft: rgba(255, 107, 94, .18);
+            --good: #8fd0a0;
+            --gold: #e9c46a;
+            --board: #0f343c;
+            --cell: #164650;
+            --cell-line: #2b626d;
+            --shink: #071e23;
+            --disc1: radial-gradient(circle at 32% 28%, #ffc9a8, #ff9163 55%, #b34e2a);
+            --disc2: radial-gradient(circle at 32% 28%, #fffdf0, #f2e7cf 55%, #b3a479);
+            --glowtop: rgba(255, 145, 99, .08);
+            --patop: .06
+        }
+
+        /* ================= پایه ================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent
+        }
+
+        html,
+        body {
+            height: 100%
+        }
+
+        body {
+            font-family: var(--font);
+            background: var(--bg0);
+            color: var(--ink);
+            overflow-x: hidden;
+            touch-action: manipulation;
+            line-height: 1.6
+        }
+
+        body.ingame {
+            overflow: hidden
+        }
+
+        button {
+            font-family: inherit;
+            color: inherit;
+            background: none;
+            border: none;
+            cursor: pointer
+        }
+
+        :focus-visible {
+            outline: 2px solid var(--p1);
+            outline-offset: 2px;
+            border-radius: 6px
+        }
+
+        .sr {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip: rect(0 0 0 0)
+        }
+
+        #bg {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background: radial-gradient(120% 90% at 50% 0%, var(--bg1), var(--bg0) 70%)
+        }
+
+        #bg::before {
+            content: "";
+            position: absolute;
+            inset: -60%;
+            opacity: var(--patop);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56'%3E%3Cpath d='M28 20v16M20 28h16' stroke='%23888888' stroke-width='1'/%3E%3C/svg%3E");
+            animation: drift 140s linear infinite
+        }
+
+        #bg::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(55% 32% at 50% -6%, var(--glowtop), transparent 70%)
+        }
+
+        @keyframes drift {
+            to {
+                transform: translate(56px, 56px)
+            }
+        }
+
+        /* ================= اجزای مشترک ================= */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 22px;
+            border-radius: var(--r);
+            background: var(--surface2);
+            border: 1px solid var(--line);
+            font-size: 15px;
+            font-weight: 700;
+            transition: transform var(--sp), border-color var(--sp), background var(--sp);
+            user-select: none
+        }
+
+        .btn:hover {
+            border-color: var(--line2)
+        }
+
+        .btn:active {
+            transform: translateY(2px) scale(.98)
+        }
+
+        .btn.primary {
+            background: linear-gradient(180deg, var(--p1), color-mix(in srgb, var(--p1) 72%, #000));
+            color: #1c1503;
+            border-color: transparent;
+            box-shadow: 0 6px 22px -6px var(--p1-glow), inset 0 1px 0 rgba(255, 255, 255, .35);
+            font-size: 17px;
+            padding: 15px 30px
+        }
+
+        .btn.primary:active {
+            box-shadow: 0 2px 10px -4px var(--p1-glow)
+        }
+
+        .btn.danger {
+            border-color: color-mix(in srgb, var(--bad) 55%, transparent);
+            color: var(--bad)
+        }
+
+        .btn.small {
+            padding: 8px 14px;
+            font-size: 13px;
+            border-radius: var(--rs)
+        }
+
+        .btn .ic {
+            width: 18px;
+            height: 18px;
+            flex: none
+        }
+
+        .btn.primary .ic {
+            width: 20px;
+            height: 20px
+        }
+
+        .icon-btn {
+            display: grid;
+            place-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            border: 1px solid var(--line);
+            background: var(--surface);
+            transition: transform var(--sp), border-color var(--sp)
+        }
+
+        .icon-btn:hover {
+            border-color: var(--line2)
+        }
+
+        .icon-btn:active {
+            transform: scale(.94)
+        }
+
+        .icon-btn .ic {
+            width: 19px;
+            height: 19px
+        }
+
+        .seg {
+            display: inline-flex;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 11px;
+            padding: 3px;
+            gap: 2px
+        }
+
+        .seg button {
+            padding: 7px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--mut);
+            transition: all var(--sp)
+        }
+
+        .seg button.on {
+            background: var(--p1);
+            color: #1c1503
+        }
+
+        .ic {
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            display: block
+        }
+
+        .ic.f {
+            fill: currentColor;
+            stroke: none
+        }
+
+        /* ================= صفحات ================= */
+        .screen {
+            display: none;
+            min-height: 100vh;
+            min-height: 100dvh
+        }
+
+        .screen.on {
+            display: flex;
+            flex-direction: column
+        }
+
+        /* ---------- خانه ---------- */
+        #screen-home {
+            padding: calc(14px + env(safe-area-inset-top)) 18px calc(18px + env(safe-area-inset-bottom));
+            max-width: 600px;
+            margin-inline: auto;
+            width: 100%;
+            justify-content: space-between;
+            gap: 14px
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .brand .mark {
+            width: 44px;
+            height: 44px;
+            flex: none
+        }
+
+        .brand h1 {
+            font-size: 26px;
+            font-weight: 900;
+            line-height: 1
+        }
+
+        .brand small {
+            display: block;
+            color: var(--mut);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: .14em;
+            direction: ltr;
+            text-align: right
+        }
+
+        .rating-pill {
+            margin-inline-start: auto;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 99px;
+            padding: 7px 13px;
+            font-size: 12px;
+            color: var(--mut)
+        }
+
+        .rating-pill b {
+            color: var(--gold);
+            font-size: 14px
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            padding-block: 8px;
+            text-align: center
+        }
+
+        .wordmark {
+            font-size: clamp(72px, 20vw, 110px);
+            font-weight: 900;
+            line-height: 1.15;
+            color: var(--ink);
+            text-shadow: 6px 6px 0 var(--shink), 6px 6px 24px var(--p1-glow)
+        }
+
+        .tagline {
+            color: var(--mut);
+            font-size: 14px;
+            font-weight: 600
+        }
+
+        .bigplay {
+            margin-top: 16px;
+            width: min(100%, 330px)
+        }
+
+        .bigplay .sub {
+            display: block;
+            font-size: 11px;
+            font-weight: 600;
+            opacity: .85;
+            margin-top: 2px
+        }
+
+        #home-rules {
+            background: var(--surface);
+            border: 1px dashed var(--gold);
+            border-radius: var(--r);
+            padding: 14px;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        #home-rules h3 {
+            color: var(--gold);
+            font-size: 14px;
+            margin-bottom: 6px;
+            font-weight: 800;
+        }
+
+        #home-rules p {
+            font-size: 12.5px;
+            color: var(--mut);
+            line-height: 1.8;
+        }
+
+        .modes {
+            display: flex;
+            flex-direction: column;
+            gap: 9px
+        }
+
+        .mode {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--r);
+            padding: 13px 15px;
+            text-align: right;
+            width: 100%;
+            transition: border-color var(--sp), transform var(--sp)
+        }
+
+        .mode:hover {
+            border-color: var(--line2)
+        }
+
+        .mode:active {
+            transform: scale(.985)
+        }
+
+        .mode .m-ic {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
+            background: var(--surface2);
+            border: 1px solid var(--line);
+            flex: none
+        }
+
+        .mode .m-ic .ic {
+            width: 21px;
+            height: 21px
+        }
+
+        .mode .m-t {
+            font-weight: 800;
+            font-size: 15px
+        }
+
+        .mode .m-d {
+            font-size: 12px;
+            color: var(--mut)
+        }
+
+        .mode .m-a {
+            margin-inline-start: auto;
+            flex: none;
+            display: flex;
+            align-items: center;
+            gap: 8px
+        }
+
+        .mode .chev {
+            color: var(--faint);
+            width: 18px;
+            height: 18px
+        }
+
+        .homefoot {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap
+        }
+
+        .hf-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            font-size: 11px;
+            color: var(--mut);
+            padding: 8px 10px;
+            border-radius: 12px;
+            min-width: 62px
+        }
+
+        .hf-btn:hover {
+            background: var(--surface)
+        }
+
+        .hf-btn .ic {
+            width: 21px;
+            height: 21px
+        }
+
+        .ver {
+            text-align: center;
+            font-size: 10.5px;
+            color: var(--faint);
+            margin-top: 8px
+        }
+
+        /* ---------- بازی ---------- */
+        #screen-game {
+            height: 100vh;
+            height: 100dvh;
+            position: relative;
+            padding: calc(8px + env(safe-area-inset-top)) 10px calc(8px + env(safe-area-inset-bottom))
+        }
+
+        .gtop,
+        .gbottom {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: none
+        }
+
+        .gtop-mid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1px;
+            min-width: 64px
+        }
+
+        #clock {
+            font-size: 14px;
+            font-weight: 800;
+            font-variant-numeric: tabular-nums
+        }
+
+        #mvcount {
+            font-size: 10.5px;
+            color: var(--faint)
+        }
+
+        .gtop-actions {
+            margin-inline-start: auto;
+            display: flex;
+            gap: 7px
+        }
+
+        .gbottom {
+            justify-content: space-between;
+            margin-top: 6px
+        }
+
+        .plate {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--r);
+            padding: 8px 13px;
+            min-width: 0;
+            transition: box-shadow .3s, border-color .3s;
+            flex: 1;
+            max-width: 260px
+        }
+
+        .plate .disc {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            flex: none;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, .35), inset 0 1px 1px rgba(255, 255, 255, .4)
+        }
+
+        .plate .disc.d1 {
+            background: var(--disc1)
+        }
+
+        .plate .disc.d2 {
+            background: var(--disc2)
+        }
+
+        .plate .p-name {
+            font-weight: 800;
+            font-size: 13.5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis
+        }
+
+        .plate .p-sub {
+            font-size: 10.5px;
+            color: var(--mut)
+        }
+
+        .plate .p-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--faint);
+            margin-inline-start: auto;
+            flex: none;
+            transition: background .3s
+        }
+
+        .plate.turn {
+            border-color: var(--line2)
+        }
+
+        .plate.turn.s1 {
+            box-shadow: 0 0 0 1px var(--p1), 0 0 18px -2px var(--p1-glow)
+        }
+
+        .plate.turn.s1 .p-dot {
+            background: var(--p1);
+            animation: pulse 1.4s ease-in-out infinite
+        }
+
+        .plate.turn.s2 {
+            box-shadow: 0 0 0 1px var(--p2), 0 0 18px -2px var(--p2-glow)
+        }
+
+        .plate.turn.s2 .p-dot {
+            background: var(--p2);
+            animation: pulse 1.4s ease-in-out infinite
+        }
+
+        @keyframes pulse {
+            50% {
+                transform: scale(1.7);
+                opacity: .55
+            }
+        }
+
+        .think {
+            font-size: 10.5px;
+            color: var(--p2);
+            font-weight: 700
+        }
+
+        .think i {
+            display: inline-block;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: currentColor;
+            margin-inline-start: 2px;
+            animation: blink 1s infinite
+        }
+
+        .think i:nth-child(2) {
+            animation-delay: .2s
+        }
+
+        .think i:nth-child(3) {
+            animation-delay: .4s
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: .15
+            }
+        }
+
+        .gmid {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 22px;
+            min-height: 0;
+            padding-block: 8px
+        }
+
+        #board-wrap {
+            position: relative;
+            width: min(94vw, 56dvh, 520px);
+            aspect-ratio: 1;
+            flex: none
+        }
+
+        @media (min-width:1000px) {
+            #board-wrap {
+                width: min(44vw, 74dvh, 600px)
+            }
+        }
+
+        #board {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            gap: clamp(4px, 1.1vmin, 8px);
+            padding: clamp(4px, 1.1vmin, 8px);
+            background: var(--board);
+            border-radius: 20px;
+            box-shadow: 0 24px 60px -20px rgba(0, 0, 0, .55), inset 0 1px 0 rgba(255, 255, 255, .05), inset 0 0 0 1px var(--cell-line);
+            user-select: none
+        }
+
+        .cell {
+            position: relative;
+            border-radius: 16%;
+            background: var(--cell);
+            box-shadow: inset 0 0 0 1px var(--cell-line);
+            padding: 0;
+            transition: background .25s, box-shadow .25s, transform .12s, opacity .3s, filter .3s
+        }
+
+        .cell::after {
+            content: "";
+            position: absolute;
+            inset: 13%;
+            border-radius: 50%;
+            background: var(--disc1);
+            opacity: 0;
+            transform: scale(.4);
+            transition: transform .22s cubic-bezier(.34, 1.5, .6, 1), opacity .16s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, .45), inset 0 1px 2px rgba(255, 255, 255, .45), inset 0 -3px 6px rgba(0, 0, 0, .3)
+        }
+
+        .cell.p1::after,
+        .cell.p2::after {
+            opacity: 1;
+            transform: scale(1)
+        }
+
+        .cell.p2::after {
+            background: var(--disc2)
+        }
+
+        .cell.pop::after {
+            animation: pop .32s cubic-bezier(.3, 1.6, .5, 1)
+        }
+
+        @keyframes pop {
+            0% {
+                transform: scale(.2)
+            }
+
+            70% {
+                transform: scale(1.12)
+            }
+
+            100% {
+                transform: scale(1)
+            }
+        }
+
+        .cell.z1 {
+            background: color-mix(in srgb, var(--cell) 78%, var(--p1));
+            box-shadow: inset 0 0 0 1px var(--cell-line), inset 0 0 14px var(--p1-soft)
+        }
+
+        .cell.z2 {
+            background: color-mix(in srgb, var(--cell) 78%, var(--p2));
+            box-shadow: inset 0 0 0 1px var(--cell-line), inset 0 0 14px var(--p2-soft)
+        }
+
+        #board.mine .cell.z1:not(.p1):not(.p2) {
+            cursor: pointer
+        }
+
+        #board.mine .cell.z1:not(.p1):not(.p2):hover::before {
+            content: "";
+            position: absolute;
+            inset: 13%;
+            border-radius: 50%;
+            background: var(--disc1);
+            opacity: .35
+        }
+
+        .cell.tm {
+            box-shadow: inset 0 0 0 3px color-mix(in srgb, var(--good) 75%, transparent), inset 0 0 12px var(--good);
+        }
+
+        .cell.to {
+            box-shadow: inset 0 0 0 3px var(--bad), inset 0 0 12px var(--bad-soft);
+            animation: dangerpulse 1.6s ease-in-out infinite
+        }
+
+        @keyframes dangerpulse {
+            50% {
+                box-shadow: inset 0 0 0 3px var(--bad), inset 0 0 16px var(--bad-soft)
+            }
+        }
+
+        .cell.last {
+            box-shadow: inset 0 0 0 2px var(--gold), inset 0 0 0 1px var(--cell-line), 0 0 16px var(--p1-glow)
+        }
+
+        .cell.win {
+            animation: winpop .5s cubic-bezier(.3, 1.5, .5, 1)
+        }
+
+        @keyframes winpop {
+            40% {
+                transform: scale(1.14)
+            }
+        }
+
+        .cell.bad-tap {
+            animation: shake .3s
+        }
+
+        @keyframes shake {
+            25% {
+                transform: translateX(4px)
+            }
+
+            75% {
+                transform: translateX(-4px)
+            }
+        }
+
+        #board.shadow-active .cell:not(.z1):not(.z2):not(.p1):not(.p2):not(.tm):not(.to) {
+            opacity: 0.35;
+            filter: grayscale(0.6);
+        }
+
+        #board.shadow-broken::after {
+            content: "سایه شکست!";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 22px;
+            font-weight: 900;
+            color: var(--gold);
+            text-shadow: 0 0 12px var(--p1-glow);
+            z-index: 10;
+            pointer-events: none;
+            animation: shatter 1.5s forwards;
+        }
+
+        @keyframes shatter {
+            0% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(0.8);
+            }
+
+            20% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(1.4);
+            }
+        }
+
+        .cell.hint-glow::before {
+            content: "";
+            position: absolute;
+            inset: 10%;
+            border-radius: 50%;
+            background: var(--gold);
+            opacity: 0.4;
+            animation: hintPulse 1.2s infinite;
+            z-index: 4;
+            pointer-events: none;
+        }
+
+        @keyframes hintPulse {
+            0% {
+                transform: scale(0.8);
+                opacity: 0.6;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 0.2;
+            }
+
+            100% {
+                transform: scale(0.8);
+                opacity: 0.6;
+            }
+        }
+
+        .beam {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity .35s;
+            border-radius: 6px;
+            z-index: 2
+        }
+
+        .beam.on {
+            opacity: 1
+        }
+
+        .beam.b1 {
+            background: linear-gradient(90deg, transparent, var(--p1-soft) 18%, var(--p1-soft) 82%, transparent)
+        }
+
+        .beam.b2 {
+            background: linear-gradient(90deg, transparent, var(--p2-soft) 18%, var(--p2-soft) 82%, transparent)
+        }
+
+        #winbeam {
+            position: absolute;
+            height: 7px;
+            border-radius: 4px;
+            background: linear-gradient(90deg, var(--gold), #fff8e0, var(--gold));
+            box-shadow: 0 0 22px var(--p1-glow), 0 0 6px var(--gold);
+            transform-origin: 0 50%;
+            transform: rotate(var(--wb-rot, 0rad)) scaleX(0);
+            pointer-events: none;
+            opacity: 0;
+            z-index: 3
+        }
+
+        #winbeam.on {
+            opacity: 1;
+            transform: rotate(var(--wb-rot, 0rad)) scaleX(1);
+            transition: transform .7s cubic-bezier(.2, .8, .2, 1), opacity .2s
+        }
+
+        .ticker {
+            flex: none;
+            text-align: center;
+            font-size: 13px;
+            color: var(--mut);
+            min-height: 24px;
+            font-weight: 700;
+            transition: color .3s
+        }
+
+        .ticker.free {
+            color: var(--gold)
+        }
+
+        .ticker.danger {
+            color: var(--bad)
+        }
+
+        #side {
+            display: none;
+            width: 250px;
+            flex: none;
+            align-self: stretch;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        @media (min-width:1000px) {
+            #side {
+                display: flex
+            }
+        }
+
+        .side-box {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--r);
+            padding: 12px
+        }
+
+        .side-box h3 {
+            font-size: 12px;
+            color: var(--mut);
+            margin-bottom: 8px;
+            font-weight: 800
+        }
+
+        #movelog {
+            list-style: none;
+            max-height: 34dvh;
+            overflow: auto;
+            font-size: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px
+        }
+
+        #movelog li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--mut)
+        }
+
+        #movelog .md {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            flex: none
+        }
+
+        #movelog .md.s1 {
+            background: var(--p1)
+        }
+
+        #movelog .md.s2 {
+            background: var(--p2)
+        }
+
+        #movelog .lbl {
+            margin-inline-start: auto;
+            font-size: 10px;
+            padding: 1px 7px;
+            border-radius: 99px;
+            background: var(--surface2);
+            border: 1px solid var(--line)
+        }
+
+        #sidebtns {
+            display: flex;
+            flex-direction: column;
+            gap: 8px
+        }
+
+        /* ---------- نتیجه ---------- */
+        #result {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: color-mix(in srgb, var(--bg0) 78%, transparent);
+            backdrop-filter: blur(5px);
+            z-index: 30;
+            padding: 16px
+        }
+
+        #result[hidden] {
+            display: none
+        }
+
+        .res-panel {
+            background: var(--surface);
+            border: 1px solid var(--line2);
+            border-radius: 22px;
+            padding: 26px 26px 22px;
+            width: min(96vw, 400px);
+            text-align: center;
+            box-shadow: 0 30px 80px -20px rgba(0, 0, 0, .6);
+            animation: rise .45s cubic-bezier(.2, 1, .3, 1);
+            max-height: 88dvh;
+            overflow: auto
+        }
+
+        @keyframes rise {
+            from {
+                transform: translateY(26px);
+                opacity: 0
+            }
+        }
+
+        .res-verdict {
+            font-size: 34px;
+            font-weight: 900;
+            line-height: 1.3
+        }
+
+        .res-verdict.w {
+            color: var(--gold);
+            text-shadow: 0 0 30px var(--p1-glow)
+        }
+
+        .res-verdict.l {
+            color: var(--mut)
+        }
+
+        .res-verdict.dr {
+            color: var(--mut)
+        }
+
+        .res-sub {
+            font-size: 13px;
+            color: var(--ink);
+            margin: 4px 0 16px;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        .res-score {
+            font-size: 46px;
+            font-weight: 900;
+            color: var(--ink);
+            line-height: 1
+        }
+
+        .res-score small {
+            font-size: 12px;
+            color: var(--faint);
+            display: block;
+            font-weight: 600;
+            margin-top: 4px
+        }
+
+        .res-grid {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin: 16px 0;
+            font-size: 12px;
+            color: var(--mut);
+            flex-wrap: wrap
+        }
+
+        .res-grid b {
+            display: block;
+            font-size: 15px;
+            color: var(--ink)
+        }
+
+        .res-rate {
+            font-size: 12px;
+            color: var(--mut);
+            margin-bottom: 14px
+        }
+
+        .res-rate b {
+            color: var(--good)
+        }
+
+        .res-wis {
+            font-size: 12px;
+            color: var(--faint);
+            border-top: 1px dashed var(--line);
+            padding-top: 12px;
+            margin-top: 14px
+        }
+
+        .res-btns {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap
+        }
+
+        .res-an {
+            font-size: 11px;
+            color: var(--faint);
+            margin-bottom: 10px
+        }
+
+        /* ---------- آموزش ---------- */
+        #tut {
+            position: absolute;
+            left: 12px;
+            right: 12px;
+            top: calc(58px + env(safe-area-inset-top));
+            z-index: 25;
+            display: flex;
+            justify-content: center;
+            pointer-events: none
+        }
+
+        #tut[hidden] {
+            display: none
+        }
+
+        #tut .t-box {
+            background: var(--surface2);
+            border: 1px solid var(--line2);
+            border-radius: var(--r);
+            padding: 16px 20px;
+            font-size: 14px;
+            font-weight: 700;
+            max-width: 420px;
+            text-align: center;
+            box-shadow: 0 16px 40px -12px rgba(0, 0, 0, .5);
+            animation: rise .4s;
+            pointer-events: auto
+        }
+
+        #tut .t-box small {
+            display: block;
+            color: var(--mut);
+            font-weight: 600;
+            font-size: 12px;
+            margin-top: 4px
+        }
+
+        /* ================= مودال ================= */
+        .modal {
+            position: fixed;
+            inset: 0;
+            z-index: 60;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center
+        }
+
+        @media (min-width:640px) {
+            .modal {
+                align-items: center;
+                padding: 20px
+            }
+        }
+
+        .modal[hidden] {
+            display: none
+        }
+
+        .modal-back {
+            position: absolute;
+            inset: 0;
+            background: rgba(6, 8, 12, .62);
+            backdrop-filter: blur(3px)
+        }
+
+        .modal-panel {
+            position: relative;
+            background: var(--surface);
+            border: 1px solid var(--line2);
+            width: min(100%, 600px);
+            max-height: 88dvh;
+            display: flex;
+            flex-direction: column;
+            border-radius: 20px 20px 0 0;
+            overflow: hidden;
+            animation: rise .35s cubic-bezier(.2, 1, .3, 1)
+        }
+
+        @media (min-width:640px) {
+            .modal-panel {
+                border-radius: 20px
+            }
+        }
+
+        .modal-head {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 18px 12px;
+            border-bottom: 1px solid var(--line);
+            flex: none
+        }
+
+        .modal-head h2 {
+            font-size: 16px;
+            font-weight: 900
+        }
+
+        .modal-head .icon-btn {
+            margin-inline-start: auto;
+            width: 34px;
+            height: 34px
+        }
+
+        .modal-body {
+            padding: 16px 18px 20px;
+            overflow: auto
+        }
+
+        /* ---------- تنظیمات ---------- */
+        .set-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 13px 0;
+            border-bottom: 1px dashed var(--line);
+            flex-wrap: wrap
+        }
+
+        .set-row:last-child {
+            border: none
+        }
+
+        .set-t {
+            font-weight: 800;
+            font-size: 13.5px
+        }
+
+        .set-d {
+            font-size: 11.5px;
+            color: var(--mut)
+        }
+
+        .sw {
+            position: relative;
+            width: 46px;
+            height: 26px;
+            flex: none;
+            display: inline-block
+        }
+
+        .sw input {
+            position: absolute;
+            opacity: 0;
+            inset: 0;
+            cursor: pointer;
+            z-index: 2;
+            width: 100%;
+            height: 100%
+        }
+
+        .sw .tr {
+            position: absolute;
+            inset: 0;
+            border-radius: 99px;
+            background: var(--surface2);
+            border: 1px solid var(--line);
+            transition: background .2s
+        }
+
+        .sw .kn {
+            position: absolute;
+            top: 3px;
+            inset-inline-start: 3px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--mut);
+            transition: all .2s
+        }
+
+        .sw input:checked~.tr {
+            background: var(--p1-soft);
+            border-color: var(--p1)
+        }
+
+        .sw input:checked~.kn {
+            background: var(--p1);
+            inset-inline-start: 23px
+        }
+
+        input[type=range] {
+            accent-color: var(--p1);
+            width: 130px
+        }
+
+        .themerow {
+            display: flex;
+            gap: 10px;
+            width: 100%
+        }
+
+        .th {
+            flex: 1;
+            border: 2px solid var(--line);
+            border-radius: 12px;
+            padding: 9px 6px;
+            font-size: 11.5px;
+            font-weight: 800;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 7px;
+            transition: border-color .2s
+        }
+
+        .th.on {
+            border-color: var(--p1)
+        }
+
+        .th .dots {
+            display: flex;
+            gap: 4px
+        }
+
+        .th .dots i {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            display: block
+        }
+
+        input[type=text] {
+            background: var(--surface2);
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            color: var(--ink);
+            padding: 9px 13px;
+            font-family: inherit;
+            font-size: 13px;
+            width: 160px;
+            text-align: center
+        }
+
+        /* ---------- آمار/تاریخچه/مدال ---------- */
+        .tiles {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+            gap: 9px
+        }
+
+        .tile {
+            background: var(--surface2);
+            border: 1px solid var(--line);
+            border-radius: var(--rs);
+            padding: 12px;
+            text-align: center
+        }
+
+        .tile b {
+            display: block;
+            font-size: 19px;
+            font-weight: 900
+        }
+
+        .tile span {
+            font-size: 10.5px;
+            color: var(--mut)
+        }
+
+        .rate-box {
+            background: var(--surface2);
+            border: 1px solid var(--line);
+            border-radius: var(--r);
+            padding: 14px;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 14px
+        }
+
+        .rate-box .rn {
+            font-size: 30px;
+            font-weight: 900;
+            color: var(--gold)
+        }
+
+        .rate-box .rt {
+            font-weight: 800;
+            font-size: 13px
+        }
+
+        .rate-box .rd {
+            font-size: 11px;
+            color: var(--mut)
+        }
+
+        .rate-bar {
+            height: 6px;
+            background: var(--line);
+            border-radius: 99px;
+            margin-top: 7px;
+            overflow: hidden
+        }
+
+        .rate-bar i {
+            display: block;
+            height: 100%;
+            background: linear-gradient(90deg, var(--p1), var(--gold));
+            border-radius: 99px;
+            transition: width .6s
+        }
+
+        .hrow {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            padding: 11px 2px;
+            border-bottom: 1px dashed var(--line);
+            font-size: 12.5px;
+            flex-wrap: wrap
+        }
+
+        .hrow:last-child {
+            border: none
+        }
+
+        .hbadge {
+            font-size: 10.5px;
+            font-weight: 800;
+            padding: 3px 10px;
+            border-radius: 99px;
+            flex: none
+        }
+
+        .hbadge.w {
+            background: var(--p1-soft);
+            color: var(--gold)
+        }
+
+        .hbadge.l {
+            background: var(--bad-soft);
+            color: var(--bad)
+        }
+
+        .hbadge.d {
+            background: var(--surface2);
+            color: var(--mut)
+        }
+
+        .hrow .hd {
+            color: var(--faint);
+            font-size: 11px
+        }
+
+        .hrow .icon-btn {
+            width: 32px;
+            height: 32px;
+            margin-inline-start: auto
+        }
+
+        .hrow .icon-btn .ic {
+            width: 15px;
+            height: 15px
+        }
+
+        .arow {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 11px 2px;
+            border-bottom: 1px dashed var(--line)
+        }
+
+        .arow:last-child {
+            border: none
+        }
+
+        .arow .a-ic {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
+            background: var(--surface2);
+            border: 1px solid var(--line);
+            flex: none;
+            color: var(--gold)
+        }
+
+        .arow .a-ic .ic {
+            width: 19px;
+            height: 19px
+        }
+
+        .arow .a-t {
+            font-weight: 800;
+            font-size: 13.5px
+        }
+
+        .arow .a-d {
+            font-size: 11.5px;
+            color: var(--mut)
+        }
+
+        .arow.locked {
+            opacity: .42
+        }
+
+        .arow.locked .a-ic {
+            color: var(--faint)
+        }
+
+        .rules {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px
+        }
+
+        .rules li {
+            display: flex;
+            gap: 11px;
+            font-size: 13.5px;
+            line-height: 1.9
+        }
+
+        .rules .n {
+            width: 26px;
+            height: 26px;
+            border-radius: 9px;
+            background: var(--p1-soft);
+            color: var(--gold);
+            display: grid;
+            place-items: center;
+            font-weight: 900;
+            font-size: 13px;
+            flex: none;
+            margin-top: 4px
+        }
+
+        /* ================= ری‌پلی ================= */
+        #replay-badge {
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
+            background: var(--surface2);
+            border: 1px solid var(--line2);
+            border-radius: 99px;
+            padding: 6px 16px;
+            font-size: 12px;
+            font-weight: 800;
+            display: none;
+            align-items: center;
+            gap: 8px
+        }
+
+        #replay-badge.on {
+            display: flex
+        }
+
+        #replay-badge .ic {
+            width: 14px;
+            height: 14px;
+            color: var(--gold)
+        }
+
+        /* ================= توست ================= */
+        #toasts {
+            position: fixed;
+            bottom: calc(16px + env(safe-area-inset-bottom));
+            left: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            z-index: 80;
+            pointer-events: none
+        }
+
+        .toast {
+            background: var(--surface2);
+            border: 1px solid var(--line2);
+            border-radius: 99px;
+            padding: 10px 20px;
+            font-size: 13px;
+            font-weight: 700;
+            box-shadow: 0 14px 40px -10px rgba(0, 0, 0, .5);
+            animation: rise .3s;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            max-width: 88vw
+        }
+
+        .toast .ic {
+            width: 17px;
+            height: 17px;
+            color: var(--gold);
+            flex: none
+        }
+
+        /* ================= موبایل کوچک/لنداسکیپ ================= */
+        @media (max-width:359px) {
+            .plate {
+                padding: 6px 9px
+            }
+
+            .plate .p-name {
+                font-size: 12px
+            }
+
+            .brand h1 {
+                font-size: 22px
+            }
+        }
+
+        @media (orientation:landscape) and (max-height:520px) {
+            #screen-game {
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                gap: 6px 18px
+            }
+
+            .gtop {
+                order: 1;
+                width: 230px
+            }
+
+            .gmid {
+                order: 2;
+                height: 100%;
+                flex: none;
+                padding: 0
+            }
+
+            .gbottom {
+                order: 3;
+                width: 230px;
+                flex-direction: column;
+                align-items: stretch;
+                margin-top: 0
+            }
+
+            #board-wrap {
+                width: min(80dvh, 88vw)
+            }
+
+            .ticker {
+                order: 4;
+                width: 230px;
+                min-height: 20px
+            }
+
+            .plate {
+                max-width: none
+            }
+
+            #side {
+                display: none
+            }
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: .001s !important;
+                transition-duration: .001s !important
+            }
+        }
+
+        html.rm *,
+        html.rm *::before,
+        html.rm *::after {
+            animation-duration: .001s !important;
+            transition-duration: .001s !important
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bg" aria-hidden="true"></div>
+    <!-- ================= خانه ================= -->
+    <section id="screen-home" class="screen on" aria-label="صفحهٔ اصلی">
+        <header class="brand">
+            <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+                <rect x="5" y="5" width="27" height="27" rx="7" fill="var(--p1)" />
+                <rect x="16" y="16" width="27" height="27" rx="7" fill="var(--shink)" opacity=".8" />
+            </svg>
+            <h1>رخ<small>ROKH</small></h1>
+            <div class="rating-pill"><span>رتبه</span><b id="home-rate">۱۲۰۰</b></div>
+        </header>
+        <div class="hero">
+            <div class="wordmark" aria-hidden="true">رخ</div>
+            <div class="tagline">هر حرکت، یک سایه می‌آفریند.</div>
+            <button id="btn-play" class="btn primary bigplay"></button>
+        </div>
+        <div id="home-rules" style="display:none;">
+            <h3>۳ قانون طلایی رخ</h3>
+            <p>
+                ۱. مهره بگذار.<br>
+                ۲. سایه‌ات حرکت حریف را محدود می‌کند.<br>
+                ۳. سه‌تایی بساز و برنده شو.
+            </p>
+        </div>
+        <nav class="modes" aria-label="حالت‌های بازی">
+            <button class="mode" id="mode-quick">
+                <span class="m-ic"><svg class="ic" viewBox="0 0 24 24">
+                        <path d="M13 3 4 14h6l-1 7 9-11h-6z" />
+                    </svg></span>
+                <span><span class="m-t">نبرد سریع</span><br><span class="m-d">در برابر هوش مصنوعی</span></span>
+                <span class="m-a" id="quick-seg"></span>
+            </button>
+            <button class="mode" id="mode-daily">
+                <span class="m-ic"><svg class="ic" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="4" />
+                        <path
+                            d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4" />
+                    </svg></span>
+                <span><span class="m-t">چالش امروز</span><br><span class="m-d" id="daily-info">—</span></span>
+                <span class="m-a"><svg class="ic chev" viewBox="0 0 24 24">
+                        <path d="M14 6l-6 6 6 6" />
+                    </svg></span>
+            </button>
+            <button class="mode" id="mode-local">
+                <span class="m-ic"><svg class="ic" viewBox="0 0 24 24">
+                        <circle cx="8.5" cy="8" r="3.2" />
+                        <path d="M2.5 20c.7-3.4 3.1-5.2 6-5.2s5.3 1.8 6 5.2" />
+                        <circle cx="16.8" cy="9" r="2.6" />
+                        <path d="M15.5 14.6c2.8.2 5.2 1.9 6 5" />
+                    </svg></span>
+                <span><span class="m-t">دونفرهٔ حضوری</span><br><span class="m-d">یک دستگاه، نوبتی</span></span>
+                <span class="m-a"><svg class="ic chev" viewBox="0 0 24 24">
+                        <path d="M14 6l-6 6 6 6" />
+                    </svg></span>
+            </button>
+        </nav>
+        <footer>
+            <div class="homefoot">
+                <button class="hf-btn" id="hb-stats"><svg class="ic" viewBox="0 0 24 24">
+                        <path d="M5 20v-7M11 20V5M17 20v-10M3 20h18" />
+                    </svg>آمار</button>
+                <button class="hf-btn" id="hb-ach"><svg class="ic" viewBox="0 0 24 24">
+                        <path
+                            d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0zM7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3" />
+                    </svg>مدال‌ها</button>
+                <button class="hf-btn" id="hb-hist"><svg class="ic" viewBox="0 0 24 24">
+                        <path d="M3.5 12a8.5 8.5 0 1 0 2.8-6.3M3.5 4v4.5H8" />
+                        <path d="M12 8v4l3 2" />
+                    </svg>تاریخچه</button>
+                <button class="hf-btn" id="hb-set"><svg class="ic" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="3.2" />
+                        <path
+                            d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.2 5.2l2.1 2.1M16.7 16.7l2.1 2.1M18.8 5.2l-2.1 2.1M7.3 16.7l-2.1 2.1" />
+                    </svg>تنظیمات</button>
+                <button class="hf-btn" id="hb-help"><svg class="ic" viewBox="0 0 24 24">
+                        <path d="M4 19V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v13l-8-4z" />
+                    </svg>قوانین</button>
+            </div>
+            <div class="ver">رخ · نسخهٔ ۱٫۰ · آفلاین کامل · داده‌ها فقط روی همین دستگاه</div>
+        </footer>
+    </section>
+    <!-- ================= بازی ================= -->
+    <section id="screen-game" class="screen" aria-label="صفحهٔ بازی">
+        <header class="gtop">
+            <div class="plate" id="plate-top">
+                <span class="disc d2"></span>
+                <span><span class="p-name" id="top-name">سایه</span><br><span class="p-sub" id="top-sub">هوش
+                        مصنوعی</span></span>
+                <span class="p-dot"></span>
+            </div>
+            <div class="gtop-mid"><span id="clock">۰۰:۰۰</span><span id="mvcount">حرکت ۱</span></div>
+            <div class="gtop-actions">
+                <button class="icon-btn" id="btn-menu" aria-label="منوی بازی"><svg class="ic" viewBox="0 0 24 24">
+                        <path d="M4 7h16M4 12h16M4 17h16" />
+                    </svg></button>
+                <button class="icon-btn" id="btn-fs" aria-label="تمام‌صفحه" hidden><svg class="ic" viewBox="0 0 24 24">
+                        <path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" />
+                    </svg></button>
+            </div>
+        </header>
+        <div class="gmid">
+            <div id="board-wrap">
+                <div class="beam b1" id="beam-r" aria-hidden="true"></div>
+                <div class="beam b1" id="beam-c" aria-hidden="true"></div>
+                <div id="board" role="grid" aria-label="صفحهٔ رخ، پنج در پنج"></div>
+                <div id="winbeam" aria-hidden="true"></div>
+                <div id="replay-badge"><svg class="ic" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
+                    </svg><span>بازپخش</span></div>
+            </div>
+            <aside id="side">
+                <div class="side-box">
+                    <h3>روند بازی</h3>
+                    <ol id="movelog"></ol>
+                </div>
+                <div id="sidebtns">
+                    <button class="btn small" id="btn-help2"><svg class="ic" viewBox="0 0 24 24">
+                            <path d="M4 19V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v13l-8-4z" />
+                        </svg>قوانین</button>
+                    <button class="btn small danger" id="btn-resign2"><svg class="ic" viewBox="0 0 24 24">
+                            <path d="M5 3v18M5 4h11l-2.5 3.5L16 11H5" />
+                        </svg>تسلیم</button>
+                </div>
+            </aside>
+        </div>
+        <div class="ticker" id="ticker" aria-hidden="true"></div>
+        <footer class="gbottom">
+            <div class="plate" id="plate-bottom">
+                <span class="disc d1"></span>
+                <span><span class="p-name" id="bot-name">نور</span><br><span class="p-sub" id="bot-sub">تو</span></span>
+                <span class="p-dot"></span>
+            </div>
+            <div class="gbottom-actions">
+                <button class="btn small" id="btn-hint" aria-label="راهنمایی"><svg class="ic" viewBox="0 0 24 24">
+                        <path d="M9 21h6M12 3a6 6 0 0 0-4 10.5V17h8v-3.5A6 6 0 0 0 12 3z" />
+                    </svg>راهنما</button>
+                <button class="btn small danger" id="btn-resign"><svg class="ic" viewBox="0 0 24 24">
+                        <path d="M5 3v18M5 4h11l-2.5 3.5L16 11H5" />
+                    </svg>تسلیم</button>
+            </div>
+        </footer>
+        <div id="tut" hidden></div>
+        <div id="result" hidden></div>
+    </section>
+    <div class="modal" id="modal" hidden>
+        <div class="modal-back" data-close></div>
+        <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <div class="modal-head">
+                <h2 id="modal-title"></h2>
+                <button class="icon-btn" data-close aria-label="بستن"><svg class="ic" viewBox="0 0 24 24">
+                        <path d="M6 6l12 12M18 6 6 18" />
+                    </svg></button>
+            </div>
+            <div class="modal-body" id="modal-body"></div>
+        </div>
+    </div>
+    <div id="toasts" aria-hidden="true"></div>
+    <div id="announcer" class="sr" aria-live="polite"></div>
+    <noscript>
+        <div style="padding:40px;text-align:center">رخ برای اجرا به جاوااسکریپت نیاز دارد.</div>
+    </noscript>
+    <script>
+        "use strict";
+        (function () {
+            /* ============================================================
+            رخ | ROKH — موتور بازی جدای از DOM است؛ رندر فقط بازتاب وضعیت است
+            ============================================================ */
+            /* ---------- ابزارها ---------- */
+            var $ = function (s, el) { return (el || document).querySelector(s) };
+            var $$ = function (s, el) { return Array.prototype.slice.call((el || document).querySelectorAll(s)) };
+            function clamp(v, a, b) { return Math.max(a, Math.min(b, v)) }
+            function faNum(n) { try { return Number(n).toLocaleString('fa-IR') } catch (e) { return String(n) } }
+            function pad2(n) { return String(n).padStart(2, '0') }
+            function uid() { return Date.now().toString(36) + Math.random().toString(36).slice(2, 7) }
+            function hashStr(s) { var h = 2166136261; for (var i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619) } return h >>> 0 }
+            function mulberry32(a) { return function () { a |= 0; a = a + 0x6D2B79F5 | 0; var t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296 } }
+            function todayKey() { var d = new Date(); return d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate()) }
+            function yesterdayKey() { var d = new Date(Date.now() - 864e5); return d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate()) }
+            function faClock(sec) { return faNum(pad2(Math.floor(sec / 60))) + ':' + faNum(pad2(sec % 60)) }
+            function faDate(ts) { try { return new Date(ts).toLocaleDateString('fa-IR') } catch (e) { return '' } }
+            var reduceMotion = false;
+            try { reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches } catch (e) { }
+            /* ---------- آیکون‌ها ---------- */
+            var ICONS = {
+                play: '<path d="M8 5v14l11-7z"/>', home: '<path d="M3 10.5 12 3l9 7.5V21h-6v-6h-6v6H3z"/>',
+                x: '<path d="M6 6l12 12M18 6 6 18"/>', replay: '<path d="M3.5 12a8.5 8.5 0 1 0 2.8-6.3M3.5 4v4.5H8"/>',
+                share: '<path d="M4 13v6a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-6M12 3v12M8 7l4-4 4 4"/>',
+                flag: '<path d="M5 3v18M5 4h11l-2.5 3.5L16 11H5"/>',
+                download: '<path d="M12 3v11M7 10l5 5 5-5M4 21h16"/>', upload: '<path d="M12 21V10M7 14l5-5 5 5M4 3h16"/>',
+                trash: '<path d="M4 7h16M9 7V4h6v3M6.5 7l1 14h9l1-14"/>',
+                star: '<path d="M12 3l2.7 5.6 6.1.8-4.5 4.2 1.2 6L12 16.7 6.5 19.6l1.2-6L3.2 9.4l6.1-.8z"/>',
+                flame: '<path d="M12 2c1 4-4 5.5-4 10a4 4 0 0 0 8 0c0-2-1-3.5-2-4.5 0 1.5-1 2.5-2 2.5.5-2.5.5-5 0-8z"/>',
+                bolt: '<path d="M13 3 4 14h6l-1 7 9-11h-6z"/>', moon: '<path d="M20 13.5A8 8 0 0 1 10.5 4 8 8 0 1 0 20 13.5z"/>',
+                sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>',
+                eye: '<path d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="2.6"/>',
+                medal: '<circle cx="12" cy="14" r="5"/><path d="M9 9.5 6.5 3M15 9.5 17.5 3M10 3h4"/>',
+                crown: '<path d="M3 8l4.5 4L12 5l4.5 7L21 8l-1.5 11h-15z"/>',
+                target: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1" fill="currentColor"/>',
+                sparkle: '<path d="M12 3v6M12 15v6M3 12h6M15 12h6M6.5 6.5l2 2M15.5 15.5l2 2M17.5 6.5l-2 2M8.5 15.5l-2 2"/>',
+                users: '<circle cx="8.5" cy="8" r="3.2"/><path d="M2.5 20c.7-3.4 3.1-5.2 6-5.2s5.3 1.8 6 5.2"/><circle cx="16.8" cy="9" r="2.6"/><path d="M15.5 14.6c2.8.2 5.2 1.9 6 5"/>',
+                book: '<path d="M4 19V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v13l-8-4z"/>',
+                clock: '<circle cx="12" cy="12" r="8.5"/><path d="M12 8v4l3 2"/>',
+                diag: '<path d="M6 18 18 6M18 6h-6M18 6v6"/>'
+            };
+            function ic(n) { return '<svg class="ic" viewBox="0 0 24 24" aria-hidden="true">' + (ICONS[n] || '') + '</svg>' }
+            /* ---------- ذخیره‌سازی (نسخه‌بندی + مهاجرت + بازیابی) ---------- */
+            var SKEY = 'rokh.save.v1';
+            function defaults() {
+                return {
+                    version: 1,
+                    settings: { theme: 'auto', sound: true, volume: .7, haptic: true, motion: 'auto', difficulty: 'medium', starter: 'you' },
+                    profile: { name: 'بازیکن', lastStarter: 2 },
+                    stats: { games: 0, wins: 0, losses: 0, draws: 0, bestScore: 0, curStreak: 0, bestStreak: 0, fastestWin: 0, longestGame: 0, cleanWins: 0, movesLifetime: 0, dailyDays: 0, dailyStreak: 0, dailyLast: '' },
+                    rating: 1200, history: [], achievements: {}, daily: {}, activeGame: null, tutorialDone: false
+                }
+            }
+            function deepMerge(base, over) {
+                var out = {}; var k; for (k in base) out[k] = base[k];
+                for (k in over) {
+                    var bv = base[k], ov = over[k];
+                    if (bv && typeof bv === 'object' && !Array.isArray(bv) && ov && typeof ov === 'object' && !Array.isArray(ov)) out[k] = deepMerge(bv, ov);
+                    else out[k] = ov
+                }
+                return out
+            }
+            var Store = (function () {
+                function load() {
+                    try {
+                        var raw = localStorage.getItem(SKEY); if (!raw) return defaults();
+                        var d = JSON.parse(raw); if (!d || typeof d !== 'object') return defaults();
+                        if (d.version !== 1) {/* زنجیرهٔ مهاجرت نسخه‌های آینده از همین‌جا عبور می‌کند */ d.version = 1; }
+                        return deepMerge(defaults(), d)
+                    } catch (e) { return defaults() }
+                }
+                var data = load();
+                function save() { try { localStorage.setItem(SKEY, JSON.stringify(data)) } catch (e) { } }
+                return {
+                    get data() { return data }, save: save,
+                    replace: function (d) { data = deepMerge(defaults(), d || {}); save() },
+                    reset: function () { data = defaults(); save() }
+                }
+            })();
+            var S = Store.data;
+            /* ---------- صدا (سنتز WebAudio) ---------- */
+            var SND = (function () {
+                var ctx = null;
+                function ensure() {
+                    try {
+                        if (!ctx) { var AC = window.AudioContext || window.webkitAudioContext; if (AC) ctx = new AC() }
+                        if (ctx && ctx.state === 'suspended') ctx.resume()
+                    } catch (e) { }
+                }
+                function tone(f, dur, type, vol, delay, slide) {
+                    if (!S.settings.sound) return; ensure(); if (!ctx) return;
+                    try {
+                        var t = ctx.currentTime + (delay || 0); var o = ctx.createOscillator(), g = ctx.createGain();
+                        o.type = type || 'sine'; o.frequency.setValueAtTime(f, t);
+                        if (slide) o.frequency.exponentialRampToValueAtTime(slide, t + dur);
+                        var v = (vol || .18) * S.settings.volume; if (v <= 0) return;
+                        g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(v, t + .012);
+                        g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+                        o.connect(g); g.connect(ctx.destination); o.start(t); o.stop(t + dur + .05)
+                    } catch (e) { }
+                }
+                return {
+                    ensure: ensure,
+                    place: function (p) { tone(p === 1 ? 660 : 494, .14, 'triangle', .2); tone(p === 1 ? 990 : 740, .09, 'sine', .06, .01) },
+                    ui: function () { tone(340, .05, 'sine', .08) },
+                    bad: function () { tone(160, .16, 'square', .06, 0, 120) },
+                    escape: function () { tone(220, .3, 'sine', .14, 0, 520) },
+                    win: function () { var f = [523, 659, 784, 1047]; for (var i = 0; i < f.length; i++)tone(f[i], .22, 'triangle', .16, i * .11) },
+                    lose: function () { var f = [440, 392, 330]; for (var i = 0; i < f.length; i++)tone(f[i], .26, 'sine', .13, i * .14) },
+                    draw: function () { tone(440, .2, 'sine', .12); tone(440, .2, 'sine', .12, .25) },
+                    ach: function () { tone(880, .12, 'sine', .14); tone(1320, .2, 'sine', .12, .09) }
+                }
+            })();
+            document.addEventListener('pointerdown', function () { SND.ensure() }, { passive: true });
+            function haptic(ms) { try { if (S.settings.haptic && navigator.vibrate) navigator.vibrate(ms) } catch (e) { } }
+            /* ---------- تم ---------- */
+            var THM = (function () {
+                var mq = null; try { mq = window.matchMedia('(prefers-color-scheme: dark)') } catch (e) { }
+                function resolve() { var t = S.settings.theme; if (t !== 'auto') return t; return (!mq || mq.matches) ? 'shab' : 'kaghaz' }
+                function apply() {
+                    var t = resolve(); document.documentElement.dataset.theme = t;
+                    var colors = { shab: '#0f1219', kaghaz: '#efe7d6', firuze: '#0d2f36' };
+                    var m = document.querySelector('meta[name=theme-color]'); if (m) m.setAttribute('content', colors[t] || '#0f1219')
+                }
+                if (mq) { try { if (mq.addEventListener) mq.addEventListener('change', apply); else if (mq.addListener) mq.addListener(apply) } catch (e) { } }
+                return { apply: apply, resolve: resolve }
+            })();
+            if (reduceMotion || S.settings.motion === 'off') document.documentElement.classList.add('rm');
+            /* ============================================================
+            موتور بازی — خالص، بدون DOM
+            ============================================================ */
+            var N = 5, CELLS = 25;
+            var ENG = {
+                new: function () { return { board: new Array(CELLS).fill(0), turn: 1, last: -1, winner: 0, line: null, moves: [], starter: 1 } },
+                zone: function (last) {
+                    if (last < 0) return null; var r = (last / N) | 0, c = last % N, z = [];
+                    for (var i = 0; i < CELLS; i++) { if (i === last) continue; var rr = (i / N) | 0, cc = i % N; if (rr === r || cc === c) z.push(i) } return z
+                },
+                legal: function (st) {
+                    var empt = [], i; for (i = 0; i < CELLS; i++)if (!st.board[i]) empt.push(i);
+                    if (st.last < 0) return { cells: empt, escaped: false };
+                    var z = ENG.zone(st.last).filter(function (x) { return !st.board[x] });
+                    return z.length ? { cells: z, escaped: false } : { cells: empt, escaped: true }
+                },
+                winAt: function (b, i, p) {
+                    var r = (i / N) | 0, c = i % N, dirs = [[0, 1], [1, 0], [1, 1], [1, -1]], d, k;
+                    for (d = 0; d < dirs.length; d++) {
+                        var cells = [i];
+                        for (k = 1; k < 3; k++) { var rr = r + dirs[d][0] * k, cc = c + dirs[d][1] * k; if (rr < 0 || rr >= N || cc < 0 || cc >= N || b[rr * N + cc] !== p) break; cells.push(rr * N + cc) }
+                        for (k = 1; k < 3; k++) { var r2 = r - dirs[d][0] * k, c2 = c - dirs[d][1] * k; if (r2 < 0 || r2 >= N || c2 < 0 || c2 >= N || b[r2 * N + c2] !== p) break; cells.unshift(r2 * N + c2) }
+                        if (cells.length >= 3) return cells
+                    } return null
+                },
+                apply: function (st, i) {
+                    var p = st.turn, u = { i: i, p: p, last: st.last, winner: st.winner, line: st.line, n: st.moves.length };
+                    st.board[i] = p; st.moves.push({ i: i, p: p });
+                    var w = ENG.winAt(st.board, i, p);
+                    if (w) { st.winner = p; st.line = w } else if (st.moves.length === CELLS) st.winner = 3;
+                    st.last = i; st.turn = 3 - p; return u
+                },
+                undo: function (st, u) { st.board[u.i] = 0; st.moves.length = u.n; st.last = u.last; st.winner = u.winner; st.line = u.line; st.turn = u.p },
+                threats: function (b, p) { var t = [], i; for (i = 0; i < CELLS; i++) { if (b[i]) continue; b[i] = p; if (ENG.winAt(b, i, p)) t.push(i); b[i] = 0 } return t },
+                pairs: function (b, p) {
+                    var n = 0, dirs = [[0, 1], [1, 0], [1, 1], [1, -1]], r, c, d;
+                    for (r = 0; r < N; r++)for (c = 0; c < N; c++) {
+                        if (b[r * N + c] !== p) continue;
+                        for (d = 0; d < dirs.length; d++) {
+                            var rr = r + dirs[d][0], cc = c + dirs[d][1]; if (rr < 0 || rr >= N || cc < 0 || cc >= N) continue; if (b[rr * N + cc] !== p) continue;
+                            var r0 = r - dirs[d][0], c0 = c - dirs[d][1], r2 = rr + dirs[d][0], c2 = cc + dirs[d][1];
+                            var e1 = r0 >= 0 && r0 < N && c0 >= 0 && c0 < N && b[r0 * N + c0] === 0;
+                            var e2 = r2 >= 0 && r2 < N && c2 >= 0 && c2 < N && b[r2 * N + c2] === 0;
+                            if (e1 || e2) n++
+                        }
+                    } return n
+                }
+            };
+            /* ============================================================
+            هوش مصنوعی — مینیمکس + آلفا-بتا (واقعی، نه تصادفی)
+            ============================================================ */
+            var AI = (function () {
+                var nodes = 0, CAP = 60000;
+                function heuristic(st, ai) {
+                    var b = st.board, opp = 3 - ai, sc = 0, i;
+                    var ta = ENG.threats(b, ai), to = ENG.threats(b, opp);
+                    sc += ta.length * 130 - to.length * 150;
+                    if (st.last >= 0) {
+                        var lm = ENG.legal(st); var zone = {}; for (i = 0; i < lm.cells.length; i++)zone[lm.cells[i]] = 1;
+                        if (st.turn === opp) {
+                            for (i = 0; i < ta.length; i++)if (!zone[ta[i]]) sc += 140;
+                            for (i = 0; i < to.length; i++)if (zone[to[i]]) sc -= 40;
+                            if (lm.escaped) sc -= 30; else sc += clamp(7 - lm.cells.length, 0, 7) * 5
+                        }
+                        else {
+                            for (i = 0; i < to.length; i++)if (!zone[to[i]]) sc -= 160;
+                            for (i = 0; i < ta.length; i++)if (zone[ta[i]]) sc += 40;
+                            if (lm.escaped) sc += 30; else sc -= clamp(7 - lm.cells.length, 0, 7) * 5
+                        }
+                    }
+                    sc += ENG.pairs(b, ai) * 14 - ENG.pairs(b, opp) * 15;
+                    for (i = 0; i < CELLS; i++) {
+                        if (!b[i]) continue; var r = (i / N) | 0, c = i % N; var w = 2 - Math.max(Math.abs(r - 2), Math.abs(c - 2)); var v = w * w * 2;
+                        sc += b[i] === ai ? v : -v
+                    }
+                    return sc
+                }
+                function orderVal(st, i, p) {
+                    var v = 0, b = st.board;
+                    b[i] = p; if (ENG.winAt(b, i, p)) v += 1e6; b[i] = 0;
+                    b[i] = 3 - p; if (ENG.winAt(b, i, 3 - p)) v += 5e5; b[i] = 0;
+                    var r = (i / N) | 0, c = i % N; v += (4 - Math.abs(r - 2) - Math.abs(c - 2)) * 10; return v
+                }
+                function search(st, depth, alpha, beta, ai) {
+                    if (st.winner) {
+                        if (st.winner === 3) return 0;
+                        return st.winner === ai ? 100000 - st.moves.length : -100000 + st.moves.length
+                    }
+                    if (depth <= 0 || nodes++ > CAP) return heuristic(st, ai);
+                    var p = st.turn, cells = ENG.legal(st).cells, it;
+                    var ord = cells.map(function (i) { return [orderVal(st, i, p), i] }).sort(function (a, b) { return b[0] - a[0] });
+                    var best = p === ai ? -Infinity : Infinity;
+                    for (var k = 0; k < ord.length; k++) {
+                        it = ord[k];
+                        var u = ENG.apply(st, it[1]); var v = search(st, depth - 1, alpha, beta, ai); ENG.undo(st, u);
+                        if (p === ai) { if (v > best) best = v; if (v > alpha) alpha = v } else { if (v < best) best = v; if (v < beta) beta = v }
+                        if (alpha >= beta) break
+                    }
+                    return best
+                }
+                function wins(st, i, p) { st.board[i] = p; var w = ENG.winAt(st.board, i, p); st.board[i] = 0; return w }
+                return {
+                    choose: function (st, p, diff, rng) {
+                        rng = rng || Math.random;
+                        var cells = ENG.legal(st).cells; if (!cells.length) return null; if (cells.length === 1) return cells[0];
+                        for (var i = 0; i < cells.length; i++)if (wins(st, cells[i], p)) return cells[i];
+                        var depth = diff === 'easy' ? 1 : diff === 'medium' ? 3 : 5;
+                        nodes = 0; var scored = [], c;
+                        for (c = 0; c < cells.length; c++) {
+                            var u = ENG.apply(st, cells[c]);
+                            var v = diff === 'easy' ? heuristic(st, p) : search(st, depth - 1, -Infinity, Infinity, p);
+                            ENG.undo(st, u); scored.push([v, cells[c]])
+                        }
+                        scored.sort(function (a, b) { return b[0] - a[0] });
+                        if (diff === 'easy') {
+                            if (rng() < .3) return cells[(rng() * cells.length) | 0];
+                            var k = Math.min(3, scored.length); return scored[(rng() * k) | 0][1]
+                        }
+                        if (diff === 'medium') { if (rng() < .12) return scored[Math.min(1, scored.length - 1)][1]; return scored[0][1] }
+                        var ties = scored.filter(function (x) { return Math.abs(x[0] - scored[0][0]) < 2 });
+                        return ties[(rng() * ties.length) | 0][1]
+                    },
+                    quickValue: function (st, i, p, depth) { nodes = 0; var u = ENG.apply(st, i); var v = search(st, depth, -Infinity, Infinity, p); ENG.undo(st, u); return v }
+                }
+            })();
+            /* ============================================================
+            مدال‌ها
+            ============================================================ */
+            var ACH = [
+                { id: 'first_win', t: 'نخستین جرقه', d: 'اولین بردت را بگیر', i: 'star', w: function (c) { return c.result === 'win' } },
+                { id: 'wins_10', t: 'ده نور', d: '۱۰ برد کسب کن', i: 'star', w: function (c, s) { return s.stats.wins >= 10 } },
+                { id: 'wins_50', t: 'پنجاه نور', d: '۵۰ برد کسب کن', i: 'crown', w: function (c, s) { return s.stats.wins >= 50 } },
+                { id: 'hard_win', t: 'شکستن سایهٔ استاد', d: 'برد برابر سخت‌ترین حریف', i: 'bolt', w: function (c) { return c.result === 'win' && c.diff === 'hard' } },
+                { id: 'streak_3', t: 'سه‌گانه', d: '۳ برد پشت‌سرهم', i: 'flame', w: function (c, s) { return s.stats.curStreak >= 3 } },
+                { id: 'streak_5', t: 'رشتهٔ آتش', d: '۵ برد پشت‌سرهم', i: 'flame', w: function (c, s) { return s.stats.curStreak >= 5 } },
+                { id: 'streak_10', t: 'ده‌تایی', d: '۱۰ برد پشت‌سرهم', i: 'flame', w: function (c, s) { return s.stats.curStreak >= 10 } },
+                { id: 'fast_win', t: 'ضربهٔ برق', d: 'برد در ۷ حرکت یا کمتر', i: 'bolt', w: function (c) { return c.result === 'win' && c.ownMoves <= 7 } },
+                { id: 'marathon', t: 'جنگ فرسایشی', d: 'برد در بازی با ۲۱ حرکت یا بیشتر', i: 'clock', w: function (c) { return c.result === 'win' && c.totalMoves >= 21 } },
+                { id: 'diag_win', t: 'از پشت غبار', d: 'برد با رشتهٔ مورب', i: 'diag', w: function (c) { return c.result === 'win' && c.diag } },
+                { id: 'escape_win', t: 'از دل شکستگی', d: 'بازی‌ای که سایه در آن شکست و تو بردی', i: 'sparkle', w: function (c) { return c.result === 'win' && c.escaped } },
+                { id: 'comeback', t: 'بازگشت از لبه', d: 'برد وقتی حریف تهدید باز داشت', i: 'target', w: function (c) { return c.result === 'win' && c.comeback } },
+                { id: 'clean_win', t: 'دستِ نخورده', d: 'برد بدون هیچ تهدید حریف', i: 'medal', w: function (c) { return c.clean === true } },
+                { id: 'excellent_5', t: 'ذهن بیدار', d: '۵ حرکت عالی در یک بازی', i: 'eye', w: function (c) { return c.excellent >= 5 } },
+                { id: 'daily_1', t: 'طلوع اول', d: 'چالش روز را تمام کن', i: 'sun', w: function (c) { return c.mode === 'daily' } },
+                { id: 'daily_300', t: 'نور کامل', d: 'امتیاز ۳۰۰+ در چالش روز', i: 'sun', w: function (c) { return c.mode === 'daily' && c.result === 'win' && c.score >= 300 } },
+                { id: 'daily_days_7', t: 'هفت صبح', d: '۷ روز مختلف چالش بازی کن', i: 'sun', w: function (c, s) { return s.stats.dailyDays >= 7 } },
+                { id: 'local_1', t: 'رودررو', d: 'اولین بازی دونفرهٔ حضوری', i: 'users', w: function (c) { return c.event === 'local' } },
+                { id: 'replay_1', t: 'تماشاگر', d: 'یک بازپخش تماشا کن', i: 'eye', w: function (c) { return c.event === 'replay' } },
+                { id: 'export_1', t: 'صندوقچه', d: 'از داده‌هایت خروجی بگیر', i: 'download', w: function (c) { return c.event === 'export' } },
+                { id: 'rating_1300', t: 'معمار', d: 'به رتبهٔ ۱۳۰۰ برس', i: 'medal', w: function (c, s) { return s.rating >= 1300 } },
+                { id: 'rating_1500', t: 'استاد سایه‌ها', d: 'به رتبهٔ ۱۵۰۰ برس', i: 'crown', w: function (c, s) { return s.rating >= 1500 } },
+                { id: 'games_100', t: 'صد نبرد', d: '۱۰۰ بازی انجام بده', i: 'target', w: function (c, s) { return s.stats.games >= 100 } },
+                { id: 'moves_1000', t: 'هزار سنگ', d: '۱۰۰۰ حرکت بگذار', i: 'star', w: function (c, s) { return s.stats.movesLifetime >= 1000 } },
+                { id: 'night_owl', t: 'جغد شب', d: 'بین ساعت ۰ تا ۵ صبح بازی کن', i: 'moon', w: function (c) { return c.event === 'night' } }];
+            function checkAch(ctx) {
+                var changed = false;
+                for (var k = 0; k < ACH.length; k++) {
+                    var a = ACH[k]; if (S.achievements[a.id]) continue; var ok = false;
+                    try { ok = a.w(ctx, S) } catch (e) { ok = false }
+                    if (ok) { S.achievements[a.id] = Date.now(); changed = true; toast(a.t, 'medal'); SND.ach(); haptic(18) }
+                }
+                if (changed) Store.save()
+            }
+            function awardEvent(name) { checkAch({ event: name }) }
+            /* ============================================================
+            توست / مودال / صفحه‌ها
+            ============================================================ */
+            function toast(msg, icon) {
+                var box = $('#toasts'); if (!box) return;
+                while (box.children.length >= 3) box.removeChild(box.firstChild);
+                var el = document.createElement('div'); el.className = 'toast';
+                el.innerHTML = (icon ? ic(icon) : '') + '<span></span>';
+                el.lastElementChild.textContent = msg;
+                box.appendChild(el); setTimeout(function () { if (el.parentNode) el.parentNode.removeChild(el) }, 3400)
+            }
+            var modalCloseCb = null;
+            function openModal(title, bodyNode, onClose) {
+                $('#modal-title').textContent = title;
+                var body = $('#modal-body'); body.innerHTML = ''; body.appendChild(bodyNode);
+                $('#modal').hidden = false; modalCloseCb = onClose || null;
+                var f = body.querySelector('button,input,select'); if (f) f.focus()
+            }
+            function closeModal() { $('#modal').hidden = true; if (modalCloseCb) { var cb = modalCloseCb; modalCloseCb = null; cb() } }
+            function modalOpen() { return !$('#modal').hidden }
+            $('#modal').addEventListener('click', function (e) { if (e.target.closest('[data-close]')) closeModal() });
+            document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modalOpen()) closeModal() });
+            function showScreen(name) {
+                var all = $$('#screen-home,#screen-game');
+                for (var i = 0; i < all.length; i++)all[i].classList.remove('on');
+                $('#screen-' + name).classList.add('on');
+                document.body.classList.toggle('ingame', name === 'game')
+            }
+            function announce(t) { var a = $('#announcer'); if (a) a.textContent = t }
+            /* ============================================================
+            کنترلر اصلی بازی
+            ============================================================ */
+            var G = {
+                mode: null, diff: 'medium', st: null, mySide: 1, over: false, lock: false, aiBusy: false,
+                startTs: 0, timerId: null, labels: {}, exCount: 0, escapeCount: 0, oppHadThreat: false,
+                comebackFlag: false, tutStep: 0, tutorial: false, dailyRng: null, surrendered: false, matchId: null
+            };
+            function diffFa(d) { return d === 'easy' ? 'آسان' : d === 'medium' ? 'متوسط' : 'سخت' }
+            function modeFa(m) { return m === 'daily' ? 'چالش روز' : m === 'local' ? 'دونفره' : m === 'replay' ? 'بازپخش' : 'نبرد سریع' }
+            function effDiff() { return G.mode === 'daily' ? 'hard' : (G.tutorial ? 'easy' : G.diff) }
+            function aiSubText() { return G.mode === 'daily' ? 'هوش مصنوعی · سخت' : 'هوش مصنوعی · ' + diffFa(G.diff) }
+            function canHuman() {
+                return G.st && !G.st.winner && !G.lock && !G.aiBusy && !REP.active && !modalOpen() &&
+                    (G.mode === 'local' || G.st.turn === G.mySide)
+            }
+            function startMatch(mode, opts) {
+                opts = opts || {};
+                G.mode = mode; G.over = false; G.lock = false; G.aiBusy = false; G.surrendered = false;
+                G.labels = {}; G.exCount = 0; G.escapeCount = 0; G.oppHadThreat = false; G.comebackFlag = false;
+                G.matchId = uid(); G.startTs = Date.now(); G.dailyRng = null;
+                $('#result').hidden = true; $('#tut').hidden = true;
+                if (opts.resume && opts.state) {
+                    G.st = opts.state; G.mySide = opts.mySide; G.diff = opts.diff || 'medium';
+                    G.startTs = opts.startTs || Date.now(); G.tutorial = false; G.tutStep = 0;
+                } else {
+                    G.st = ENG.new();
+                    G.tutorial = (!S.tutorialDone && mode === 'quick');
+                    if (mode === 'local') { G.mySide = 0; G.st.starter = 1 }
+                    else if (mode === 'daily') {
+                        G.mySide = 1; G.st.starter = 1; G.diff = 'hard';
+                        G.dailyRng = mulberry32(hashStr('rokh-' + todayKey()))
+                    }
+                    else {
+                        G.mySide = 1;
+                        if (G.tutorial) { G.diff = 'easy'; G.st.starter = 1 }
+                        else {
+                            var pref = S.settings.starter;
+                            if (pref === 'you') G.st.starter = 1;
+                            else if (pref === 'ai') G.st.starter = 2;
+                            else G.st.starter = S.profile.lastStarter === 1 ? 2 : 1;
+                            S.profile.lastStarter = G.st.starter
+                        }
+                    }
+                    G.st.turn = G.st.starter
+                }
+                saveActive(); showScreen('game'); setupPlates();
+                R.build(); R.draw(); startTimer();
+                if (new Date().getHours() < 5) awardEvent('night');
+                if (mode === 'local') awardEvent('local');
+                if (G.tutorial) TUT.showStep(1);
+                maybeAI()
+            }
+            function setupPlates() {
+                var local = G.mode === 'local';
+                $('#top-name').textContent = local ? 'بازیکن دوم (سایه)' : 'سایه';
+                $('#top-sub').textContent = local ? 'نوبتی' : aiSubText();
+                $('#bot-name').textContent = local ? 'بازیکن اول (نور)' : (S.profile.name || 'بازیکن');
+                $('#bot-sub').textContent = local ? 'نوبتی' : 'تو · نور'
+            }
+            function saveActive() {
+                if (!G.st || G.over) return;
+                S.activeGame = {
+                    mode: G.mode, diff: G.diff, mySide: G.mySide, startTs: G.startTs,
+                    st: {
+                        board: G.st.board.slice(), turn: G.st.turn, last: G.st.last, winner: G.st.winner,
+                        line: G.st.line ? G.st.line.slice() : null,
+                        moves: G.st.moves.map(function (m) { return { i: m.i, p: m.p } }), starter: G.st.starter
+                    }
+                };
+                Store.save()
+            }
+            function clearActive() { S.activeGame = null; Store.save() }
+            function startTimer() {
+                stopTimer();
+                $('#clock').textContent = '۰۰:۰۰';
+                G.timerId = setInterval(function () {
+                    if (!G.over && G.st) $('#clock').textContent = faClock(Math.floor((Date.now() - G.startTs) / 1000))
+                }, 1000)
+            }
+            function stopTimer() { if (G.timerId) { clearInterval(G.timerId); G.timerId = null } }
+            function analyzeMove(i) {
+                if (G.mode === 'local' || !G.st || G.st.moves.length > 24) return null;
+                var p = G.st.turn, cells = ENG.legal(G.st).cells;
+                if (cells.length < 2) return null;
+                var best = -Infinity, vals = {}, c;
+                for (c = 0; c < cells.length; c++) { vals[cells[c]] = AI.quickValue(G.st, cells[c], p, 2); if (vals[cells[c]] > best) best = vals[cells[c]] }
+                var delta = best - vals[i];
+                if (delta < 1) return 'عالی'; if (delta < 20) return 'خوب'; if (delta < 80) return 'قابل‌توجه';
+                if (delta < 250) return 'نادقیق'; return 'اشتباه'
+            }
+            function doMove(i, byHuman) {
+                var st = G.st; if (!st || st.winner) return;
+                var p = st.turn;
+                var lm = ENG.legal(st); if (lm.escaped) { G.escapeCount++; SND.escape() }
+                var label = null, oppBefore = 0;
+                if (byHuman) { label = analyzeMove(i); oppBefore = ENG.threats(st.board, 3 - p).length }
+                ENG.apply(st, i);
+                if (label) { G.labels[st.moves.length] = label; if (label === 'عالی') G.exCount++ }
+                if (byHuman && st.winner === p && oppBefore > 0) G.comebackFlag = true;
+                if (G.mode !== 'local' && st.turn === G.mySide && ENG.threats(st.board, 3 - G.mySide).length > 0) G.oppHadThreat = true;
+                saveActive(); SND.place(p); haptic(8); R.draw(i);
+                var r = (i / N) | 0, c = i % N;
+                announce((p === 1 ? 'نور' : 'سایه') + ' در سطر ' + faNum(r + 1) + ' ستون ' + faNum(c + 1));
+                if (G.tutorial && G.tutStep === 1 && !st.winner) TUT.afterFirstMove();
+                if (st.winner) { endMatch(); return }
+                maybeAI()
+            }
+            function maybeAI() {
+                var st = G.st;
+                if (!st || st.winner || G.over || REP.active) return;
+                if (G.mode === 'local') return;
+                if (st.turn === G.mySide) return;
+                G.aiBusy = true; R.draw();
+                var delay = reduceMotion ? 120 : 380 + Math.random() * 420;
+                setTimeout(function () {
+                    if (G.over || !G.st) { G.aiBusy = false; return }
+                    var mv = null;
+                    if (G.st.moves.length === 0 && effDiff() === 'hard') mv = 12;
+                    else if (G.st.moves.length === 0) { var ops = [12, 12, 6, 8, 16, 18]; mv = ops[(Math.random() * ops.length) | 0] }
+                    else mv = AI.choose(G.st, G.st.turn, effDiff(), G.dailyRng || undefined);
+                    G.aiBusy = false;
+                    if (mv === null || mv === undefined) return;
+                    doMove(mv, false)
+                }, delay)
+            }
+            /* ---------- پایان بازی ---------- */
+            var WISDOM = ['گاهی بهترین حمله، بستنِ راه حریف است.', 'سایهٔ تنگ حریف را می‌شکند؛ سایهٔ شکسته تو را.',
+                'هر خانه‌ای که می‌گذاری، آزادی حریف را شکل می‌دهد.', 'سه‌تایی مورب از چشم حریف عجول پنهان می‌ماند.',
+                'وقتی راهی نیست، سایه می‌شکند؛ آمادهٔ لحظهٔ آزادی باش.', 'برد سریع همیشه بهتر نیست — اما معمولاً هست.',
+                'هر حرکت یک پیام دارد؛ گوش دادنش با حریف است.', 'گاهی باید خانه‌ای را بخشید تا خطی را برد.'];
+
+            function getMatchSummary(result, st, ownMoves, totalMoves) {
+                if (result === 'win') {
+                    if (G.escapeCount > 0) return 'برد استراتژیک! سایه را شکستی و از آزادی استفاده کردی.';
+                    if (G.comebackFlag) return 'بازگشت حماسی! حریف تهدید داشت، اما تو مسیر را عوض کردی.';
+                    if (ownMoves <= 7) return 'برق‌آسا! حریف فرصت دفاع نداشت.';
+                    return 'تبریک! با محدود کردن حریف، سه‌تایی را کامل کردی.';
+                } else if (result === 'lose') {
+                    if (G.surrendered) return 'تسلیم شدی. گاهی عقب‌نشینی برای پیروزی بعدی لازم است.';
+                    if (G.oppHadThreat && !G.comebackFlag) return 'حریف یک تهدید دوگانه ساخت و راه فراری نماند.';
+                    return 'سایه‌ات شکست یا حریف مسیر بهتری پیدا کرد. دوباره تلاش کن!';
+                } else if (result === 'draw') {
+                    return 'صفحه پر شد و هیچ‌کس به سه‌تایی نرسید. نبرد برابر بود.';
+                }
+                return '';
+            }
+
+            function endMatch() {
+                G.over = true; stopTimer(); clearActive();
+                var st = G.st, duration = Math.floor((Date.now() - G.startTs) / 1000);
+                var local = G.mode === 'local';
+                var result;
+                if (st.winner === 3) result = 'draw';
+                else if (local) result = st.winner === 1 ? 'p1' : 'p2';
+                else result = st.winner === G.mySide ? 'win' : 'lose';
+                if (G.surrendered) result = 'lose';
+                var ownMoves = st.moves.filter(function (m) { return m.p === (local ? 1 : G.mySide) }).length;
+                var totalMoves = st.moves.length;
+                var score = 0;
+                if (result === 'win') score = 100 + Math.max(0, 13 - ownMoves) * 8 + (G.diff === 'hard' ? 60 : G.diff === 'medium' ? 25 : 0) + (G.mode === 'daily' ? 20 : 0);
+                else if (result === 'draw') score = 30;
+                var diag = false;
+                if (st.line && st.line.length >= 3) {
+                    var f = st.line[0], l = st.line[st.line.length - 1];
+                    diag = ((f / N) | 0) !== ((l / N) | 0) && (f % N) !== (l % N)
+                }
+                var T = S.stats; T.games++; T.movesLifetime += totalMoves;
+                if (!local) {
+                    if (result === 'win') {
+                        T.wins++; T.curStreak++; T.bestStreak = Math.max(T.bestStreak, T.curStreak);
+                        if (!T.fastestWin || ownMoves < T.fastestWin) T.fastestWin = ownMoves;
+                        if (score > T.bestScore) T.bestScore = score;
+                        if (!G.oppHadThreat && !G.surrendered) T.cleanWins++
+                    }
+                    else if (result === 'lose') { T.losses++; T.curStreak = 0 }
+                    else T.draws++;
+                    T.longestGame = Math.max(T.longestGame, totalMoves);
+                    var d = G.diff;
+                    var delta = result === 'win' ? (d === 'easy' ? 14 : d === 'medium' ? 20 : 28) : result === 'lose' ? (d === 'easy' ? -10 : d === 'medium' ? -8 : -5) : 2;
+                    S.rating = Math.max(600, S.rating + delta)
+                }
+                if (G.mode === 'daily') {
+                    var k = todayKey(); var dd = S.daily[k] || (S.daily[k] = { best: 0, attempts: 0 });
+                    dd.attempts++; if (result === 'win' && score > dd.best) dd.best = score;
+                    T.dailyDays = Object.keys(S.daily).length;
+                    if (T.dailyLast !== k) { T.dailyStreak = (T.dailyLast === yesterdayKey()) ? T.dailyStreak + 1 : 1; T.dailyLast = k }
+                }
+                S.history.unshift({
+                    id: G.matchId, ts: Date.now(), mode: G.mode, diff: G.diff, result: result, score: score,
+                    totalMoves: totalMoves, duration: duration, starter: st.starter, mySide: local ? 1 : G.mySide,
+                    moves: st.moves.map(function (m) { return { i: m.i, p: m.p } })
+                });
+                if (S.history.length > 40) S.history.length = 40;
+                Store.save();
+                checkAch({
+                    result: result === 'p1' || result === 'p2' ? 'win' : result, mode: G.mode, diff: G.diff, ownMoves: ownMoves,
+                    totalMoves: totalMoves, score: score, diag: diag, escaped: G.escapeCount > 0, comeback: G.comebackFlag,
+                    clean: result === 'win' && !G.oppHadThreat && !G.surrendered, excellent: G.exCount
+                });
+                if (result === 'win' || result === 'p1') { SND.win(); haptic([14, 60, 26]) }
+                else if (result === 'lose' || result === 'p2') { SND.lose(); haptic(40) }
+                else SND.draw();
+                R.winFx(); showResult(result, score, totalMoves, duration, local)
+            }
+            function showResult(result, score, totalMoves, duration, local) {
+                var box = $('#result');
+                var verdict = '', cls = 'dr';
+                if (result === 'win') { verdict = 'بُردی!'; cls = 'w'; }
+                else if (result === 'lose') { verdict = 'باختی'; cls = 'l'; }
+                else if (result === 'p1') { verdict = 'نور برنده شد'; cls = 'w'; }
+                else if (result === 'p2') { verdict = 'سایه برنده شد'; cls = 'l'; }
+                else { verdict = 'تساوی'; }
+
+                var sub = getMatchSummary(result, G.st, G.st.moves.filter(function (m) { return m.p === (local ? 1 : G.mySide) }).length, totalMoves);
+
+                var counts = {}, k; for (k in G.labels) { var l = G.labels[k]; counts[l] = (counts[l] || 0) + 1 }
+                var anParts = []; for (k in counts) anParts.push(faNum(counts[k]) + ' ' + k);
+                var anTxt = anParts.join(' · ');
+                var rated = G.mode !== 'local';
+                var html = '<div class="res-panel" role="dialog" aria-modal="true">'
+                    + '<div class="res-verdict ' + cls + '">' + verdict + '</div>'
+                    + '<div class="res-sub">' + sub + '</div>'
+                    + '<div class="res-score">' + (score ? faNum(score) : '—') + '<small>امتیاز</small></div>'
+                    + '<div class="res-grid">'
+                    + '<span><b>' + faNum(totalMoves) + '</b>حرکت</span>'
+                    + '<span><b>' + faClock(duration) + '</b>زمان</span>'
+                    + '<span><b>' + faNum(S.stats.curStreak) + '</b>زنجیرهٔ برد</span>'
+                    + '<span><b>' + faNum(S.stats.bestScore) + '</b>بهترین امتیاز</span></div>'
+                    + (rated ? '<div class="res-rate">رتبهٔ تو: <b>' + faNum(S.rating) + '</b> · ' + tierName(S.rating) + '</div>' : '')
+                    + (anTxt ? '<div class="res-an">تحلیل حرکت‌ها: ' + anTxt + '</div>' : '')
+                    + '<div class="res-btns">'
+                    + '<button class="btn primary small" id="r-again">' + ic('replay') + ' دوباره</button>'
+                    + '<button class="btn small" id="r-replay">' + ic('eye') + ' بازپخش</button>'
+                    + '<button class="btn small" id="r-share">' + ic('share') + ' اشتراک</button>'
+                    + '<button class="btn small" id="r-home">' + ic('home') + ' خانه</button></div>'
+                    + '<div class="res-wis">' + WISDOM[hashStr(G.matchId) % WISDOM.length] + '</div></div>';
+                box.innerHTML = html; box.hidden = false;
+                $('#r-again').onclick = function () { SND.ui(); box.hidden = true; startMatch(G.mode, {}) };
+                $('#r-replay').onclick = function () {
+                    SND.ui(); box.hidden = true;
+                    REP.run(currentRecord(), function () { box.hidden = false })
+                };
+                $('#r-share').onclick = function () { SHARE.result(result, score, totalMoves, duration) };
+                $('#r-home').onclick = function () { SND.ui(); leaveMatch() };
+                announce(verdict)
+            }
+            function currentRecord() {
+                var st = G.st; return {
+                    id: G.matchId, mode: G.mode, diff: G.diff, starter: st.starter,
+                    mySide: G.mySide || 1, moves: st.moves.map(function (m) { return { i: m.i, p: m.p } }), winner: st.winner
+                }
+            }
+            function leaveMatch() {
+                stopTimer(); REP.stop(); G.st = null; G.over = true;
+                $('#result').hidden = true; $('#tut').hidden = true;
+                showScreen('home'); HOME.render()
+            }
+            /* ---------- تسلیم / منو ---------- */
+            function resign() {
+                if (G.over || !G.st || REP.active) return;
+                var body = document.createElement('div');
+                var p = document.createElement('p'); p.style.cssText = 'font-size:14px;margin-bottom:16px';
+                p.textContent = 'از این نبرد می‌گذری؟ نتیجه «باخت» ثبت می‌شود.'; body.appendChild(p);
+                var btn = document.createElement('button'); btn.className = 'btn danger'; btn.textContent = 'بله، تسلیم';
+                btn.onclick = function () { closeModal(); G.surrendered = true; G.st.winner = G.mySide === 1 ? 2 : 1; endMatch() };
+                body.appendChild(btn); openModal('تسلیم', body)
+            }
+            function pauseMenu() {
+                if (REP.active || !G.st) return;
+                var body = document.createElement('div'); body.style.cssText = 'display:flex;flex-direction:column;gap:9px';
+                function mk(txt, iconName, cb) {
+                    var b = document.createElement('button'); b.className = 'btn';
+                    b.innerHTML = ic(iconName) + '<span>' + txt + '</span>';
+                    b.onclick = function () { SND.ui(); closeModal(); cb() }; body.appendChild(b)
+                }
+                mk('ادامهٔ بازی', 'play', function () { });
+                mk('شروع دوباره', 'replay', function () { startMatch(G.mode, {}) });
+                mk('قوانین', 'book', function () { openHelp() });
+                mk('خانه', 'home', function () { leaveMatch() });
+                openModal('منوی بازی', body)
+            }
+            /* ============================================================
+            آموزش تعاملی
+            ============================================================ */
+            var TUT = {
+                showStep: function (n) {
+                    var box = $('#tut'); box.hidden = false;
+                    if (n === 1) {
+                        box.innerHTML = '<div class="t-box"><b>۱. یک سنگ بگذار</b><small>هر سنگ، ردیف و ستون خودش را سایه می‌کند.</small><br><button class="btn small danger" id="tut-skip" style="margin-top:10px">رد کردن آموزش</button></div>';
+                        $('#tut-skip').onclick = function () { TUT.done(); };
+                    }
+                },
+                afterFirstMove: function () {
+                    G.tutStep = 2; var box = $('#tut'); box.hidden = false;
+                    box.innerHTML = '<div class="t-box"><b>۲. سایه ساخته شد!</b><small>حریف فقط می‌تواند درون این سایه (ردیف و ستون) بازی کند. خانه‌های بیرون مسدودند.</small><br><button class="btn small primary" id="tut-next" style="margin-top:10px">ادامه</button>';
+                    $('#tut-next').onclick = function () { TUT.finalStep(); maybeAI(); };
+                },
+                finalStep: function () {
+                    G.tutStep = 3; var box = $('#tut'); box.hidden = false;
+                    box.innerHTML = '<div class="t-box"><b>۳. هدف: سه سنگ پشت‌سرهم</b><small>افقی، عمودی یا مورب. استراتژی: هم حمله کن، هم آزادی حریف را بگیر!</small><br><button class="btn small primary" id="tut-done" style="margin-top:10px">شروع بازی واقعی</button>';
+                    $('#tut-done').onclick = function () { TUT.done(); };
+                },
+                done: function () { G.tutStep = 0; G.tutorial = false; S.tutorialDone = true; Store.save(); $('#tut').hidden = true }
+            };
+            /* ============================================================
+            رندرر
+            ============================================================ */
+            var R = (function () {
+                var cells = [], foc = 12, bound = false;
+                function build() {
+                    var b = $('#board'); b.innerHTML = ''; cells = [];
+                    for (var i = 0; i < CELLS; i++) {
+                        var btn = document.createElement('button');
+                        btn.className = 'cell'; btn.dataset.i = i; btn.setAttribute('role', 'gridcell');
+                        btn.tabIndex = i === foc ? 0 : -1;
+                        b.appendChild(btn); cells.push(btn)
+                    }
+                    if (!bound) {
+                        bound = true;
+                        b.addEventListener('click', function (e) { var c = e.target.closest('.cell'); if (!c) return; handleTap(+c.dataset.i) });
+                        b.addEventListener('keydown', onKey);
+                        b.addEventListener('contextmenu', function (e) { e.preventDefault() })
+                    }
+                    requestAnimationFrame(positionBeams)
+                }
+                function handleTap(i) {
+                    if (REP.active || !G.st) return;
+                    if (!canHuman()) {
+                        if (!modalOpen() && G.st && !G.st.winner) {
+                            SND.bad();
+                            cells[i].classList.remove('bad-tap'); void cells[i].offsetWidth; cells[i].classList.add('bad-tap')
+                        }
+                        return
+                    }
+                    var lm = ENG.legal(G.st);
+                    if (lm.cells.indexOf(i) < 0) {
+                        SND.bad();
+                        cells[i].classList.remove('bad-tap'); void cells[i].offsetWidth; cells[i].classList.add('bad-tap'); return
+                    }
+                    doMove(i, true)
+                }
+                function onKey(e) {
+                    var r = (foc / N) | 0, c = foc % N, nr = r, nc = c;
+                    if (e.key === 'ArrowUp') nr = Math.max(0, r - 1);
+                    else if (e.key === 'ArrowDown') nr = Math.min(N - 1, r + 1);
+                    else if (e.key === 'ArrowLeft') nc = Math.min(N - 1, c + 1);
+                    else if (e.key === 'ArrowRight') nc = Math.max(0, c - 1);
+                    else if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleTap(foc); return }
+                    else return;
+                    e.preventDefault(); setFocus(nr * N + nc)
+                }
+                function setFocus(i) { if (cells[foc]) cells[foc].tabIndex = -1; foc = i; if (cells[foc]) { cells[foc].tabIndex = 0; cells[foc].focus() } }
+                function positionBeams() {
+                    var st = G.st, wrap = $('#board-wrap');
+                    var br = $('#beam-r'), bc = $('#beam-c'); if (!br || !bc || !cells.length) return;
+                    var noBeam = REP.active && !G.st;
+                    if (!st || st.winner || st.last < 0 || noBeam) { br.classList.remove('on'); bc.classList.remove('on'); return }
+                    var lm = ENG.legal(st);
+                    if (lm.escaped) { br.classList.remove('on'); bc.classList.remove('on'); return }
+                    var cell = cells[st.last]; if (!cell || !cell.getBoundingClientRect) return;
+                    var wrect = wrap.getBoundingClientRect(), cr = cell.getBoundingClientRect();
+                    if (!cr.width) return;
+                    br.style.top = (cr.top - wrect.top) + 'px'; br.style.height = cr.height + 'px';
+                    br.style.left = '0'; br.style.right = '0'; br.style.width = 'auto';
+                    bc.style.left = (cr.left - wrect.left) + 'px'; bc.style.width = cr.width + 'px';
+                    bc.style.top = '0'; bc.style.bottom = '0'; bc.style.height = 'auto';
+                    var cls = st.turn === 1 ? 'b1' : 'b2';
+                    br.className = 'beam on ' + cls; bc.className = 'beam on ' + cls
+                }
+                function draw(lastPlayed) {
+                    var st = G.st; if (!st || !cells.length) return;
+                    var winner = st.winner;
+                    var lm = winner ? { cells: [], escaped: false } : ENG.legal(st);
+                    var zoneSet = {}; for (var z = 0; z < lm.cells.length; z++)zoneSet[lm.cells[z]] = 1;
+                    var moverTurn = st.turn;
+                    var tMe = [], tOp = [], i;
+                    if (!winner && !REP.active) {
+                        if (G.mode === 'local') { tMe = ENG.threats(st.board, moverTurn); tOp = ENG.threats(st.board, 3 - moverTurn) }
+                        else { tMe = ENG.threats(st.board, G.mySide); tOp = ENG.threats(st.board, 3 - G.mySide) }
+                    }
+                    var winSet = {};
+                    if (winner && winner !== 3 && st.line) for (i = 0; i < st.line.length; i++)winSet[st.line[i]] = 1;
+                    for (i = 0; i < CELLS; i++) {
+                        var el = cells[i], v = st.board[i];
+                        el.classList.toggle('p1', v === 1); el.classList.toggle('p2', v === 2);
+                        el.classList.toggle('z1', !winner && !!zoneSet[i] && !v && moverTurn === 1);
+                        el.classList.toggle('z2', !winner && !!zoneSet[i] && !v && moverTurn === 2);
+                        el.classList.toggle('tm', tMe.indexOf(i) >= 0 && !v);
+                        el.classList.toggle('to', tOp.indexOf(i) >= 0 && !v);
+                        el.classList.toggle('last', st.last === i && !winner);
+                        el.classList.toggle('win', !!winSet[i]);
+                        el.setAttribute('aria-label', 'سطر ' + faNum(((i / N) | 0) + 1) + '، ستون ' + faNum(i % N + 1) + ' — '
+                            + (v === 1 ? 'سنگ نور' : v === 2 ? 'سنگ سایه' : (zoneSet[i] && !winner ? 'خانهٔ مجاز' : 'خالی')))
+                    }
+                    if (lastPlayed !== undefined && cells[lastPlayed] && !reduceMotion) {
+                        var pe = cells[lastPlayed]; pe.classList.add('pop');
+                        setTimeout(function () { pe.classList.remove('pop') }, 350)
+                    }
+                    $('#board').classList.toggle('mine', canHuman());
+                    $('#board').classList.toggle('shadow-active', !winner && !lm.escaped && st.last >= 0);
+                    $('#board').classList.toggle('shadow-broken', !winner && lm.escaped);
+                    positionBeams(); updatePlates(); updateTicker(lm);
+                    $('#mvcount').textContent = 'حرکت ' + faNum(st.moves.length + (winner ? 0 : 1));
+                    renderLog()
+                }
+                function updatePlates() {
+                    var st = G.st; if (!st) return;
+                    var top = $('#plate-top'), bot = $('#plate-bottom');
+                    top.classList.remove('turn', 's1', 's2'); bot.classList.remove('turn', 's1', 's2');
+                    if (st.winner || REP.active) { $('#top-sub').textContent = G.mode === 'local' ? 'نوبتی' : aiSubText(); return }
+                    if (G.mode === 'local') {
+                        if (st.turn === 2) top.classList.add('turn', 's2'); else bot.classList.add('turn', 's1');
+                        return
+                    }
+                    var aiTurn = st.turn !== G.mySide;
+                    if (aiTurn) {
+                        top.classList.add('turn', 's2');
+                        if (G.aiBusy) $('#top-sub').innerHTML = 'هوش مصنوعی <span class="think">فکر می‌کند<i></i><i></i><i></i></span>';
+                        else $('#top-sub').textContent = aiSubText()
+                    }
+                    else { bot.classList.add('turn', 's1'); $('#top-sub').textContent = aiSubText() }
+                }
+                function updateTicker(lm) {
+                    var st = G.st, tk = $('#ticker');
+                    tk.classList.remove('free', 'danger');
+                    if (REP.active || !st || st.winner) { tk.textContent = ''; return }
+
+                    var myTurn = G.mode === 'local' ? true : st.turn === G.mySide;
+                    var oppSide = G.mode === 'local' ? (3 - st.turn) : (3 - G.mySide);
+                    var opT = ENG.threats(st.board, oppSide);
+                    var myT = ENG.threats(st.board, myTurn ? st.turn : G.mySide);
+
+                    if (lm.escaped) {
+                        tk.textContent = '✨ سایه شکست! اکنون در هر خانه‌ای آزاد هستی.';
+                        tk.classList.add('free');
+                        return;
+                    }
+
+                    if (myTurn) {
+                        if (myT.length > 0) {
+                            tk.textContent = '🔥 تو یک قدم تا برد فاصله داری!';
+                            tk.classList.add('free');
+                        } else if (opT.length > 0) {
+                            tk.textContent = '⚠️ خطر! حریف یک قدم تا برد دارد. دفاع کن!';
+                            tk.classList.add('danger');
+                        } else {
+                            var legalCount = lm.cells.length;
+                            tk.textContent = 'نوبت توست. حریف را در ' + faNum(legalCount) + ' خانه محدود کن.';
+                        }
+                    } else {
+                        if (opT.length > 0) {
+                            tk.textContent = '⚠️ حریف یک قدم تا برد دارد...';
+                            tk.classList.add('danger');
+                        } else {
+                            tk.textContent = 'حریف در حال اندیشیدن است...';
+                        }
+                    }
+                }
+                function renderLog() {
+                    var log = $('#movelog'); if (!log || !G.st) return;
+                    log.innerHTML = ''; var ms = G.st.moves;
+                    var start = Math.max(0, ms.length - 30);
+                    for (var k = start; k < ms.length; k++) {
+                        var m = ms[k]; var li = document.createElement('li');
+                        var dot = document.createElement('span'); dot.className = 'md s' + m.p;
+                        var tx = document.createElement('span');
+                        tx.textContent = faNum(k + 1) + '. ' + (m.p === 1 ? 'نور' : 'سایه') + ' · س' + faNum(((m.i / N) | 0) + 1) + ' ست' + faNum(m.i % N + 1);
+                        li.appendChild(dot); li.appendChild(tx);
+                        var lbl = G.labels[k + 1];
+                        if (lbl) { var b = document.createElement('span'); b.className = 'lbl'; b.textContent = lbl; li.appendChild(b) }
+                        log.appendChild(li)
+                    }
+                    log.scrollTop = log.scrollHeight
+                }
+                function winFx() {
+                    var st = G.st; if (!st || !st.line || st.winner === 3) return;
+                    var wrap = $('#board-wrap'), wb = $('#winbeam');
+                    if (!cells.length) return;
+                    var wr = wrap.getBoundingClientRect();
+                    var a = cells[st.line[0]].getBoundingClientRect(), b2 = cells[st.line[st.line.length - 1]].getBoundingClientRect();
+                    var x1 = a.left - wr.left + a.width / 2, y1 = a.top - wr.top + a.height / 2;
+                    var x2 = b2.left - wr.left + b2.width / 2, y2 = b2.top - wr.top + b2.height / 2;
+                    var len = Math.hypot(x2 - x1, y2 - y1), ang = Math.atan2(y2 - y1, x2 - x1);
+                    wb.style.left = x1 + 'px'; wb.style.top = (y1 - 3) + 'px'; wb.style.width = len + 'px';
+                    wb.style.setProperty('--wb-rot', ang + 'rad');
+                    wb.classList.remove('on'); void wb.offsetWidth; wb.classList.add('on')
+                }
+                return { build: build, draw: draw, positionBeams: positionBeams, winFx: winFx, getCellEl: function (i) { return cells[i]; } }
+            })();
+            var resizeT = null;
+            window.addEventListener('resize', function () {
+                clearTimeout(resizeT);
+                resizeT = setTimeout(function () { R.positionBeams() }, 150)
+            });
+            /* ============================================================
+            بازپخش
+            ============================================================ */
+            var REP = {
+                active: false, timer: null, idx: 0, rec: null, cb: null,
+                run: function (rec, cb) {
+                    if (!rec || !rec.moves || !rec.moves.length) { toast('حرکتی برای بازپخش نیست'); return }
+                    if (G.st && !G.st.winner) { toast('اول بازی جاری را تمام کن'); return }
+                    REP.active = true; REP.rec = rec; REP.cb = cb || null; REP.idx = 0;
+                    G.st = ENG.new(); G.mySide = rec.mySide || 1; G.over = true;
+                    showScreen('game'); R.build(); R.draw();
+                    $('#replay-badge').classList.add('on');
+                    REP.timer = setInterval(function () { REP.step() }, reduceMotion ? 260 : 560)
+                },
+                step: function () {
+                    var m = REP.rec.moves[REP.idx]; if (!m) { REP.finish(); return }
+                    ENG.apply(G.st, m.i); REP.idx++; R.draw(m.i); SND.place(m.p);
+                    if (G.st.winner) REP.finish()
+                },
+                finish: function () {
+                    if (REP.timer) { clearInterval(REP.timer); REP.timer = null }
+                    R.winFx();
+                    setTimeout(function () { REP.stop(); awardEvent('replay'); if (REP.cb) { var cb = REP.cb; REP.cb = null; cb() } }, 1400)
+                },
+                stop: function () {
+                    REP.active = false; if (REP.timer) { clearInterval(REP.timer); REP.timer = null }
+                    var badge = $('#replay-badge'); if (badge) badge.classList.remove('on'); REP.rec = null
+                }
+            };
+            /* ============================================================
+            اشتراک‌گذاری
+            ============================================================ */
+            var SHARE = {
+                result: function (result, score, moves, duration) {
+                    var v = result === 'win' ? 'بُردم' : result === 'lose' ? 'باختم' : result === 'draw' ? 'تساوی' : (result === 'p1' ? 'نور برد' : 'سایه برد');
+                    var txt = 'رخ | ROKH'
+                        + '\n' + v + ' · ' + modeFa(G.mode) + (G.mode !== 'local' ? ' · ' + diffFa(G.diff) : '')
+                        + '\nامتیاز ' + faNum(score) + ' · ' + faNum(moves) + ' حرکت · ' + faClock(duration)
+                        + '\nرتبه ' + faNum(S.rating) + ' · بهترین امتیاز ' + faNum(S.stats.bestScore);
+                    SHARE.send(txt)
+                },
+                send: function (txt) {
+                    if (navigator.share) {
+                        navigator.share({ title: 'رخ | ROKH', text: txt }).catch(function (e) {
+                            if (e && e.name === 'AbortError') return; SHARE.copy(txt)
+                        });
+                        return
+                    }
+                    SHARE.copy(txt)
+                },
+                copy: function (txt) {
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                        navigator.clipboard.writeText(txt).then(function () { toast('نتیجه کپی شد', 'share') },
+                            function () { SHARE.showText(txt) });
+                        return
+                    }
+                    SHARE.showText(txt)
+                },
+                showText: function (txt) {
+                    var b = document.createElement('div');
+                    var ta = document.createElement('textarea'); ta.value = txt;
+                    ta.style.cssText = 'width:100%;height:110px;background:var(--surface2);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:10px;font-family:inherit';
+                    ta.setAttribute('readonly', '');
+                    b.appendChild(ta); openModal('اشتراک نتیجه', b); ta.select()
+                }
+            };
+            /* ============================================================
+            صفحه‌ها
+            ============================================================ */
+            function tierName(r) { return r < 1100 ? 'تازه‌کار' : r < 1250 ? 'بازیکن' : r < 1400 ? 'مهارتمند' : r < 1550 ? 'معمار سایه' : 'استاد نور' }
+            function nextTier(r) { return r < 1100 ? 1100 : r < 1250 ? 1250 : r < 1400 ? 1400 : r < 1550 ? 1550 : 1600 }
+
+            function showHint() {
+                if (!G.st || G.st.winner || G.mode === 'local' || G.aiBusy) return;
+                if (G.st.turn !== G.mySide) return;
+                var cells = ENG.legal(G.st).cells;
+                if (!cells.length) return;
+                var bestMove = AI.choose(G.st, G.st.turn, 'medium');
+                if (bestMove !== null && cells.indexOf(bestMove) >= 0) {
+                    var cellEl = R.getCellEl(bestMove);
+                    if (cellEl) {
+                        cellEl.classList.add('hint-glow');
+                        setTimeout(function () { cellEl.classList.remove('hint-glow'); }, 2500);
+                        toast('بهترین حرکت: خانه‌ای که هم حمله است هم دفاع.', 'target');
+                    }
+                } else {
+                    toast('فعلاً حرکت برنده‌ای پیدا نشد؛ دفاع کن!', 'target');
+                }
+            }
+
+            var HOME = {
+                render: function () {
+                    $('#home-rate').textContent = faNum(S.rating);
+                    var pb = $('#btn-play');
+                    if (S.activeGame) pb.innerHTML = ic('play') + '<span>ادامهٔ نبرد قبلی</span>';
+                    else pb.innerHTML = ic('play') + '<span>بازی کن</span>';
+                    var seg = $('#quick-seg'); seg.innerHTML = '';
+                    var sg = document.createElement('span'); sg.className = 'seg';
+                    sg.setAttribute('role', 'group'); sg.setAttribute('aria-label', 'سختی حریف');
+                    var ds = ['easy', 'medium', 'hard'];
+                    for (var i = 0; i < ds.length; i++) {
+                        (function (d) {
+                            var b = document.createElement('button'); b.type = 'button'; b.textContent = diffFa(d);
+                            if (S.settings.difficulty === d) b.classList.add('on');
+                            b.onclick = function (e) { e.stopPropagation(); S.settings.difficulty = d; Store.save(); SND.ui(); HOME.render() };
+                            sg.appendChild(b)
+                        })(ds[i])
+                    }
+                    seg.appendChild(sg);
+                    var k = todayKey(), dd = S.daily[k];
+                    $('#daily-info').textContent = dd ? ('امروز: بهترین ' + faNum(dd.best) + ' · ' + faNum(dd.attempts) + ' تلاش')
+                        : 'سخت‌ترین حریف · رکورد امروز: —';
+
+                    var hr = $('#home-rules');
+                    if (hr) hr.style.display = S.tutorialDone ? 'none' : 'block';
+                },
+                bind: function () {
+                    $('#btn-play').onclick = function () {
+                        SND.ui();
+                        if (S.activeGame) resumeActive(); else startMatch('quick', {})
+                    };
+                    $('#mode-quick').onclick = function () { SND.ui(); startMatch('quick', {}) };
+                    $('#mode-daily').onclick = function () { SND.ui(); startMatch('daily', {}) };
+                    $('#mode-local').onclick = function () { SND.ui(); startMatch('local', {}) };
+                    $('#hb-stats').onclick = function () { SND.ui(); openStats() };
+                    $('#hb-ach').onclick = function () { SND.ui(); openAch() };
+                    $('#hb-hist').onclick = function () { SND.ui(); openHist() };
+                    $('#hb-set').onclick = function () { SND.ui(); openSettings() };
+                    $('#hb-help').onclick = function () { SND.ui(); openHelp() }
+                }
+            };
+            function resumeActive() {
+                var a = S.activeGame;
+                if (!a || !a.st) { startMatch('quick', {}); return }
+                var st = ENG.new();
+                st.board = a.st.board.slice(); st.turn = a.st.turn; st.last = a.st.last;
+                st.winner = a.st.winner; st.line = a.st.line || null; st.moves = a.st.moves || []; st.starter = a.st.starter || 1;
+                startMatch(a.mode, { resume: true, state: st, mySide: a.mySide, diff: a.diff, startTs: a.startTs })
+            }
+            function openStats() {
+                var T = S.stats, body = document.createElement('div');
+                var wr = T.games ? Math.round(T.wins / T.games * 100) : 0;
+                var rb = document.createElement('div'); rb.className = 'rate-box';
+                var nx = nextTier(S.rating);
+                var prev = nx === 1600 ? 1550 : nx - 150;
+                var pct = nx === 1600 ? 100 : clamp((S.rating - prev) / (nx - prev) * 100, 0, 100);
+                rb.innerHTML = '<div><div class="rn">' + faNum(S.rating) + '</div><div class="rd">رتبهٔ محلی</div></div>'
+                    + '<div style="flex:1"><div class="rt">' + tierName(S.rating) + '</div>'
+                    + '<div class="rd">' + (nx === 1600 ? 'عنوان نهایی' : 'تا عنوان بعدی: ' + faNum(Math.max(0, nx - S.rating))) + '</div>'
+                    + '<div class="rate-bar"><i style="width:' + pct + '%"></i></div></div>';
+                body.appendChild(rb);
+                var tiles = document.createElement('div'); tiles.className = 'tiles';
+                var items = [['بازی‌ها', faNum(T.games)], ['بردها', faNum(T.wins)], ['باخت‌ها', faNum(T.losses)], ['تساوی‌ها', faNum(T.draws)],
+                ['نرخ برد', faNum(wr) + '٪'], ['بهترین امتیاز', faNum(T.bestScore)], ['زنجیرهٔ فعلی', faNum(T.curStreak)], ['بهترین زنجیره', faNum(T.bestStreak)],
+                ['سریع‌ترین برد', T.fastestWin ? faNum(T.fastestWin) + ' حرکت' : '—'], ['طولانی‌ترین بازی', T.longestGame ? faNum(T.longestGame) + ' حرکت' : '—'],
+                ['بردهای بی‌نقص', faNum(T.cleanWins)], ['روزهای چالش', faNum(T.dailyDays)]];
+                for (var i = 0; i < items.length; i++) {
+                    var d = document.createElement('div'); d.className = 'tile';
+                    d.innerHTML = '<b>' + items[i][1] + '</b><span>' + items[i][0] + '</span>'; tiles.appendChild(d)
+                }
+                body.appendChild(tiles);
+                var note = document.createElement('p'); note.style.cssText = 'font-size:11px;color:var(--faint);margin-top:14px';
+                note.textContent = 'همهٔ آمار از بازی‌های واقعی همین دستگاه استخراج شده است.';
+                body.appendChild(note);
+                openModal('آمار', body)
+            }
+            function openAch() {
+                var body = document.createElement('div');
+                var got = Object.keys(S.achievements).length;
+                var hd = document.createElement('p'); hd.style.cssText = 'font-size:12px;color:var(--mut);margin-bottom:10px';
+                hd.textContent = faNum(got) + ' از ' + faNum(ACH.length) + ' مدال باز شده'; body.appendChild(hd);
+                for (var i = 0; i < ACH.length; i++) {
+                    var a = ACH[i];
+                    var row = document.createElement('div'); row.className = 'arow' + (S.achievements[a.id] ? '' : ' locked');
+                    row.innerHTML = '<span class="a-ic">' + ic(a.i) + '</span><span><span class="a-t">' + a.t + '</span><br><span class="a-d">' + a.d + '</span></span>';
+                    body.appendChild(row)
+                }
+                openModal('مدال‌ها', body)
+            }
+            function openHist() {
+                var body = document.createElement('div');
+                if (!S.history.length) {
+                    var e = document.createElement('p');
+                    e.style.cssText = 'color:var(--mut);font-size:13px;text-align:center;padding:20px 0';
+                    e.textContent = 'هنوز بازی‌ای ثبت نشده است.'; body.appendChild(e); openModal('تاریخچه', body); return
+                }
+                for (var i = 0; i < S.history.length; i++) {
+                    (function (h) {
+                        var row = document.createElement('div'); row.className = 'hrow';
+                        var badge = h.result === 'win' ? '<span class="hbadge w">برد</span>'
+                            : h.result === 'lose' ? '<span class="hbadge l">باخت</span>'
+                                : h.result === 'draw' ? '<span class="hbadge d">تساوی</span>'
+                                    : h.result === 'p1' ? '<span class="hbadge w">نور</span>' : '<span class="hbadge l">سایه</span>';
+                        row.innerHTML = badge + '<span>' + modeFa(h.mode) + (h.mode !== 'local' ? ' · ' + diffFa(h.diff) : '') + '</span>'
+                            + '<span class="hd">' + faDate(h.ts) + ' · ' + faNum(h.totalMoves) + ' حرکت' + (h.score ? ' · امتیاز ' + faNum(h.score) : '') + '</span>';
+                        var btn = document.createElement('button'); btn.className = 'icon-btn'; btn.innerHTML = ic('replay');
+                        btn.setAttribute('aria-label', 'بازپخش این بازی');
+                        btn.onclick = function () { SND.ui(); closeModal(); REP.run(h, function () { leaveMatch() }) };
+                        row.appendChild(btn); body.appendChild(row)
+                    })(S.history[i])
+                }
+                openModal('تاریخچه', body)
+            }
+            function openSettings() {
+                var body = document.createElement('div');
+                var st = S.settings;
+                function row(t, d, ctrl) {
+                    var r = document.createElement('div'); r.className = 'set-row';
+                    var sp = document.createElement('span');
+                    sp.innerHTML = '<span class="set-t">' + t + '</span><br><span class="set-d">' + d + '</span>';
+                    r.appendChild(sp); r.appendChild(ctrl); body.appendChild(r); return r
+                }
+                function sw(on, cb) {
+                    var l = document.createElement('label'); l.className = 'sw';
+                    var inp = document.createElement('input'); inp.type = 'checkbox'; inp.checked = !!on;
+                    inp.onchange = function () { cb(inp.checked) };
+                    l.appendChild(inp);
+                    var tr = document.createElement('span'); tr.className = 'tr'; l.appendChild(tr);
+                    var kn = document.createElement('span'); kn.className = 'kn'; l.appendChild(kn);
+                    return l
+                }
+                /* تم‌ها */
+                var themer = document.createElement('div'); themer.className = 'set-row';
+                var tw = document.createElement('div'); tw.style.width = '100%';
+                tw.innerHTML = '<span class="set-t">تم بازی</span>';
+                var trr = document.createElement('div'); trr.className = 'themerow';
+                var themes = [['shab', 'شب', ['#151a26', '#e8b34c', '#54b8a6']],
+                ['kaghaz', 'کاغذ', ['#f4eee0', '#c65a2e', '#3b5b7e']],
+                ['firuze', 'فیروزه', ['#123a42', '#ff9163', '#f2e7cf']],
+                ['auto', 'خودکار', null]];
+                for (var ti = 0; ti < themes.length; ti++) {
+                    (function (t) {
+                        var b = document.createElement('button'); b.type = 'button';
+                        b.className = 'th' + (st.theme === t[0] ? ' on' : '');
+                        var dots = '<span class="dots">';
+                        if (t[2]) for (var j = 0; j < t[2].length; j++)dots += '<i style="background:' + t[2][j] + '"></i>';
+                        else dots += '<i style="background:#888"></i>';
+                        dots += '</span>';
+                        b.innerHTML = dots + '<span>' + t[1] + '</span>';
+                        b.onclick = function () { st.theme = t[0]; Store.save(); THM.apply(); SND.ui(); openSettings() };
+                        trr.appendChild(b)
+                    })(themes[ti])
+                }
+                tw.appendChild(trr); themer.appendChild(tw); body.appendChild(themer);
+                /* صدا */
+                var sndCtl = document.createElement('div'); sndCtl.style.cssText = 'display:flex;align-items:center;gap:10px';
+                var rng = document.createElement('input'); rng.type = 'range'; rng.min = 0; rng.max = 100;
+                rng.value = Math.round(st.volume * 100); rng.setAttribute('aria-label', 'بلندی صدا');
+                rng.oninput = function () { st.volume = rng.value / 100; Store.save() };
+                rng.onchange = function () { SND.place(1) };
+                sndCtl.appendChild(sw(st.sound, function (v) { st.sound = v; Store.save() }));
+                sndCtl.appendChild(rng);
+                row('صدا', 'افکت‌های صوتی بازی', sndCtl);
+                row('لرزش', 'بازخورد لمسی ظریف روی دستگاه‌های پشتیبان',
+                    sw(st.haptic, function (v) { st.haptic = v; Store.save(); haptic(12) }));
+                row('انیمیشن', 'خاموش = حالت کاهش‌حرکت',
+                    sw(st.motion !== 'off', function (v) {
+                        st.motion = v ? 'auto' : 'off'; Store.save();
+                        document.documentElement.classList.toggle('rm', !v || reduceMotion)
+                    }));
+                /* سختی و شروع */
+                var seg2 = document.createElement('span'); seg2.className = 'seg';
+                var ds = ['easy', 'medium', 'hard'];
+                for (var di = 0; di < ds.length; di++) {
+                    (function (d) {
+                        var b = document.createElement('button'); b.type = 'button'; b.textContent = diffFa(d);
+                        if (st.difficulty === d) b.classList.add('on');
+                        b.onclick = function () { st.difficulty = d; Store.save(); SND.ui(); openSettings() };
+                        seg2.appendChild(b)
+                    })(ds[di])
+                }
+                row('سختی پیش‌فرض', 'برای نبرد سریع', seg2);
+                var seg3 = document.createElement('span'); seg3.className = 'seg';
+                var sopts = [['you', 'من'], ['ai', 'حریف'], ['alternate', 'یک‌درمیان']];
+                for (var si = 0; si < sopts.length; si++) {
+                    (function (o) {
+                        var b = document.createElement('button'); b.type = 'button'; b.textContent = o[1];
+                        if (st.starter === o[0]) b.classList.add('on');
+                        b.onclick = function () { st.starter = o[0]; Store.save(); SND.ui(); openSettings() };
+                        seg3.appendChild(b)
+                    })(sopts[si])
+                }
+                row('شروع‌کننده', 'در نبرد سریع', seg3);
+                /* نام */
+                var inp = document.createElement('input'); inp.type = 'text'; inp.maxLength = 20;
+                inp.value = S.profile.name; inp.setAttribute('aria-label', 'نام بازیکن');
+                inp.onchange = function () { S.profile.name = inp.value.trim() || 'بازیکن'; Store.save() };
+                row('نام تو', 'روی صفحهٔ بازی دیده می‌شود', inp);
+                /* داده */
+                var dbtns = document.createElement('div'); dbtns.style.cssText = 'display:flex;gap:8px;flex-wrap:wrap';
+                var b1 = document.createElement('button'); b1.className = 'btn small'; b1.innerHTML = ic('download') + 'خروجی';
+                b1.onclick = function () { IO.export() };
+                var b2 = document.createElement('button'); b2.className = 'btn small'; b2.innerHTML = ic('upload') + 'ورودی';
+                b2.onclick = function () { IO.import() };
+                var b3 = document.createElement('button'); b3.className = 'btn small danger'; b3.innerHTML = ic('trash') + 'حذف همه';
+                b3.onclick = function () { IO.reset() };
+                dbtns.appendChild(b1); dbtns.appendChild(b2); dbtns.appendChild(b3);
+                row('داده‌ها', 'همه‌چیز فقط روی همین دستگاه است', dbtns);
+                var pv = document.createElement('p');
+                pv.style.cssText = 'font-size:11px;color:var(--faint);margin-top:12px';
+                pv.textContent = 'حریم خصوصی: رخ هیچ داده‌ای را به هیچ سروری ارسال نمی‌کند.';
+                body.appendChild(pv);
+                openModal('تنظیمات', body)
+            }
+            function openHelp() {
+                var body = document.createElement('div');
+                body.innerHTML = '<ul class="rules">'
+                    + '<li><span class="n">۱</span><span>به‌نوبت یک سنگ روی خانهٔ خالی بگذار.</span></li>'
+                    + '<li><span class="n">۲</span><span>هر سنگ، <b>ردیف و ستون</b> خودش را سایه می‌کند؛ حریف باید حرکت بعدی‌اش را درون سایهٔ تو بگذارد.</span></li>'
+                    + '<li><span class="n">۳</span><span>اگر سایه خانهٔ خالی نداشت، سایه <b>می‌شکند</b> و حریف آزاد است.</span></li>'
+                    + '<li><span class="n">۴</span><span>اولین نفر با <b>سه سنگ پشت‌سرهم</b> — افقی، عمودی یا مورب — برنده است.</span></li></ul>';
+                var tip = document.createElement('p');
+                tip.style.cssText = 'font-size:12px;color:var(--mut);margin-top:14px;line-height:2';
+                tip.textContent = 'نکته: خانه‌های با قاب سبز یعنی تو یک قدم تا برد داری؛ قاب قرمز یعنی حریف. سایهٔ مورب‌ها را جدی بگیر — چشم حریف معمولاً به ردیف و ستون است.';
+                body.appendChild(tip);
+                openModal('قوانین رخ', body)
+            }
+            /* ---------- ورودی/خروجی داده ---------- */
+            var IO = {
+                export: function () {
+                    try {
+                        var data = JSON.stringify(S, null, 1);
+                        var blob = new Blob([data], { type: 'application/json' });
+                        var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'rokh-backup.json';
+                        document.body.appendChild(a); a.click(); a.remove();
+                        setTimeout(function () { URL.revokeObjectURL(a.href) }, 2000);
+                        awardEvent('export'); toast('خروجی داده‌ها ذخیره شد', 'download')
+                    } catch (e) { toast('خروجی ممکن نشد') }
+                },
+                import: function () {
+                    var inp = document.createElement('input'); inp.type = 'file'; inp.accept = '.json,application/json';
+                    inp.onchange = function () {
+                        var f = inp.files && inp.files[0]; if (!f) return;
+                        var rd = new FileReader();
+                        rd.onload = function () {
+                            try {
+                                var d = JSON.parse(rd.result);
+                                if (!d || typeof d !== 'object' || d.version !== 1 || !d.settings || !d.stats) { toast('فایل معتبر نیست'); return }
+                                Store.replace(d); THM.apply();
+                                if (reduceMotion || S.settings.motion === 'off') document.documentElement.classList.add('rm');
+                                else document.documentElement.classList.remove('rm');
+                                toast('داده‌ها وارد شد'); HOME.render()
+                            } catch (e2) { toast('فایل خوانا نیست') }
+                        };
+                        rd.onerror = function () { toast('خواندن فایل ممکن نشد') };
+                        rd.readAsText(f)
+                    };
+                    inp.click()
+                },
+                reset: function () {
+                    var body = document.createElement('div');
+                    var p = document.createElement('p'); p.style.cssText = 'font-size:13.5px;margin-bottom:14px';
+                    p.textContent = 'همهٔ آمار، مدال‌ها و بازی جاری برای همیشه حذف می‌شود. مطمئنی؟';
+                    body.appendChild(p);
+                    var b = document.createElement('button'); b.className = 'btn danger'; b.textContent = 'بله، همه‌چیز حذف شود';
+                    b.onclick = function () { Store.reset(); location.reload() };
+                    body.appendChild(b); openModal('حذف داده‌ها', body)
+                }
+            };
+            /* ============================================================
+            اتصال نهایی و راه‌اندازی
+            ============================================================ */
+            function bindGame() {
+                $('#btn-menu').onclick = function () { SND.ui(); pauseMenu() };
+                $('#btn-resign').onclick = function () { SND.ui(); resign() };
+                $('#btn-resign2').onclick = function () { SND.ui(); resign() };
+                $('#btn-help2').onclick = function () { SND.ui(); openHelp() };
+                $('#btn-hint').onclick = function () { SND.ui(); showHint() };
+                var fsBtn = $('#btn-fs');
+                if (fsBtn && document.documentElement.requestFullscreen) {
+                    fsBtn.hidden = false;
+                    fsBtn.onclick = function () {
+                        try {
+                            if (document.fullscreenElement) document.exitFullscreen();
+                            else document.documentElement.requestFullscreen()
+                        } catch (e) { }
+                    }
+                }
+            }
+            function init() {
+                THM.apply();
+                R.build();
+                HOME.bind(); bindGame(); HOME.render();
+                if (!S.activeGame || (S.activeGame && S.activeGame.st && S.activeGame.st.winner)) S.activeGame = null;
+                document.addEventListener('visibilitychange', function () { if (G.st && !G.over) saveActive() })
+            }
+            if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+            else init();
+        })();
+    </script>
+</body>
+
+</html>
